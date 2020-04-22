@@ -5,7 +5,8 @@
 
 **Enunciado**
 > Probar el compilador con un programa hello.cpp que envíe a cout la línea
-Hello, World! o similar. <
+Hello, World! o similar. 
+
 **Hipótesis**
 > Para poder resolver el enunciado, primero instalé Visual Studio Community 2019, instalé el IDE y el compilador para C++ que me proporcionaba el instalador del Visual.
 Escribí un namespace para poder utilizar la plantilla std las veces que quiera sin tener que escribirlo siempre que lo requiera.
