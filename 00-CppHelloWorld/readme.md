@@ -1,5 +1,5 @@
-## - Usuario Github: nataliadamilano
-## - Número de Legajo: 1745323
+## -Usuario Github: nataliadamilano
+## -Número de Legajo: 1745323
 ## -Nombre y Apellido: Natalia Belén Damilano
 ## - Número y título del trabajo: 00-CppHelloWorld
 
