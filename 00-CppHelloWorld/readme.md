@@ -1,7 +1,7 @@
-## -Usuario Github: nataliadamilano
-## -Número de Legajo: 1745323
-## -Nombre y Apellido: Natalia Belén Damilano
-## - Número y título del trabajo: 00-CppHelloWorld
+## Usuario Github: nataliadamilano
+## Número de Legajo: 1745323
+## Nombre y Apellido: Natalia Belén Damilano
+## Número y título del trabajo: 00-CppHelloWorld
 
 ### Enunciado
 > Probar el compilador con un programa hello.cpp que envíe a cout la línea
