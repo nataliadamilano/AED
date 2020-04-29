@@ -1,3 +1,9 @@
+/* 01-Adicion
+ * Se pide por teclado al usuario que ingrese dos números y se muestra por pantalla la suma de estos como resultado.
+ * Natalia Belén Damilano
+ * 29/4/2020
+ */
+
 #include <iostream>
 using namespace std;
 
