@@ -11,7 +11,7 @@ Para finalizar el problema, se imprime por pantalla un mensaje que muestra la su
 **Acá terminaría la resolución del ejercicio** , siendo una hipótesis y una resolución válida, pero pensé en agregar dos bloques de iteración cuya finalidad es:
 
 
-1- El while principal que contiene todo el proceso de ingreso, muestra y suma de enteros lo utilizaré para que el usuario tenga la posibilidad de repetir una adición si quiere (esto se le pregunta por pantalla, en el caso de que desee seguir operando, se le pide ingresar el número '0', sino deberá ingresar un '1'). Antes de que comience este ciclo, agregaré una variable de tipo int que voy a inicializar con el valor '0'. Este ciclo "while" se rompe si el usuario ingresa un '1'.
+**1**- El while principal que contiene todo el proceso de ingreso, muestra y suma de enteros lo utilizaré para que el usuario tenga la posibilidad de repetir una adición si quiere (esto se le pregunta por pantalla, en el caso de que desee seguir operando, se le pide ingresar el número '0', sino deberá ingresar un '1'). Antes de que comience este ciclo, agregaré una variable de tipo int que voy a inicializar con el valor '0'. Este ciclo "while" se rompe si el usuario ingresa un '1'.
 
 
-2- El while que está contenido dentro del primero, verificaría que el usuario respete las opciones que se le otorgaron para continuar o salir del programa. Este ciclo se rompería si el usuario ingresa un valor menor que '0' ó mayor que '1'.
+**2**- El while que está contenido dentro del primero, verificaría que el usuario respete las opciones que se le otorgaron para continuar o salir del programa. Este ciclo se rompería si el usuario ingresa un valor menor que '0' ó mayor que '1'.
