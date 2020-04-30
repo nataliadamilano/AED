@@ -1,7 +1,9 @@
 # Etapa #1: Análisis del Problema
 
 - **Transcripción del problema:** Se pide al usuario que ingrese por teclado dos números, luego se deberá de mostrar por pantalla la suma de estos.
-- **Refinamiento del problema e hipótesis de trabajo:**  Primero se pedirá que el usuario ingrese por teclado dos números, elegí trabajar con números de tipo entero. Para ello, declararé dos variables de tipo int. Luego, imprimiré por pantalla un texto que le pida al usuario el ingreso de estos dos números enteros. Le indicaré al usuario cuándo estaría ingresando el primer número y por consiguiente, el segundo.
+- **Refinamiento del problema e hipótesis de trabajo:**
+
+Primero se pedirá que el usuario ingrese por teclado dos números, elegí trabajar con números de tipo entero. Para ello, declararé dos variables de tipo int. Luego, imprimiré por pantalla un texto que le pida al usuario el ingreso de estos dos números enteros. Le indicaré al usuario cuándo estaría ingresando el primer número y por consiguiente, el segundo.
 Cuando el usuario ingrese el primer número, se guardará el valor que ingresó en la primer variable que se ha declarado. Lo mismo con el segundo número.
 
 
