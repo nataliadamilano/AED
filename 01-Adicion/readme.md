@@ -39,6 +39,8 @@ Para finalizar el problema, se imprime por pantalla un mensaje que muestra la su
   Representación textual
 </p>
 
+    Inicio
+    
     continuar = 0
 
     Mientras continuar != 1
@@ -81,3 +83,5 @@ Para finalizar el problema, se imprime por pantalla un mensaje que muestra la su
   
   
     Fin Mientras
+    
+    Fin
