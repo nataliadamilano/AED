@@ -15,3 +15,6 @@ Para finalizar el problema, se imprime por pantalla un mensaje que muestra la su
 
 
 **2**- El while que está contenido dentro del primero, verificaría que el usuario respete las opciones que se le otorgaron para continuar o salir del programa. Este ciclo se rompería si el usuario ingresa un valor menor que '0' ó mayor que '1'.
+
+
+![image](https://user-images.githubusercontent.com/50343556/80669330-69a65700-8aa4-11ea-991b-1fc9240a54c0.png)
