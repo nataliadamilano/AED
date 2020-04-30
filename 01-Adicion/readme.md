@@ -40,43 +40,43 @@ Para finalizar el problema, se imprime por pantalla un mensaje que muestra la su
 </p>
 
 
-**Mientras continuar != 1**
+    **Mientras continuar != 1**
 
 
-  **Mostrar "Ingrese dos numeros enteros por pantalla, por favor"**
+      **Mostrar "Ingrese dos numeros enteros por pantalla, por favor"**
   
   
-  **Mostrar "Primer número: "**
+      **Mostrar "Primer número: "**
   
   
-  **Leer num1**
+      **Leer num1**
   
   
-  **Mostrar "Segundo número: **
+      **Mostrar "Segundo número: **
   
   
-  **Leer num2**
+      **Leer num2**
   
   
-  **Mostrar "El resultado de la suma es: " num1 + num2**
+      **Mostrar "El resultado de la suma es: " num1 + num2**
   
   
-  **Mostrar "¿Desea continuar generando adiciones? Ingrese 0 si la respuesta es SI, de lo contrario ingrese un 1."**
+      **Mostrar "¿Desea continuar generando adiciones? Ingrese 0 si la respuesta es SI, de lo contrario ingrese un 1."**
   
   
-  **Leer continuar**
+      **Leer continuar**
   
   
-  **Mientras continuar < 0 ó continuar > 1**
+      **Mientras continuar < 0 ó continuar > 1**
   
   
-    **Mostrar "ERROR. Debe de ingresar una de las opciones sugeridas anteriormente para continuar."**
+        **Mostrar "ERROR. Debe de ingresar una de las opciones sugeridas anteriormente para continuar."**
     
     
-    **Leer continuar**
+        **Leer continuar**
     
     
-  **Fin Mientras**
+      **Fin Mientras**
   
   
-**Fin Mientras**
+    **Fin Mientras**
