@@ -19,3 +19,15 @@ Para finalizar el problema, se imprime por pantalla un mensaje que muestra la su
 <p align="center">
 <img src="https://user-images.githubusercontent.com/50343556/80669330-69a65700-8aa4-11ea-991b-1fc9240a54c0.png">
 </p>
+
+# Etapa #2 Diseño de la Solución
+
+
+- **Léxico del Algoritmo:** num1, num2, continuar ∈ **Z**
+
+- **Representación del Algoritmo:**
+
+*Representación visual*
+<p align="center">
+<img src="https://user-images.githubusercontent.com/50343556/80672894-2650e600-8aae-11ea-8b0f-e460e0f53ef0.png">
+</p>
