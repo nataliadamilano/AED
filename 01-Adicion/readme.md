@@ -23,11 +23,33 @@ Para finalizar el problema, se imprime por pantalla un mensaje que muestra la su
 # Etapa #2 Diseño de la Solución
 
 
-- **Léxico del Algoritmo:** num1, num2 ∈ **Z**
+- **Léxico del Algoritmo:** num1, num2, continuar ∈ **Z**
 
 - **Representación del Algoritmo:**
 
-<p align="center"> *Representación visual* </p>
+<p align="center">
+  Representación visual
+</p>
 <p align="center">
 <img src="https://user-images.githubusercontent.com/50343556/80672894-2650e600-8aae-11ea-8b0f-e460e0f53ef0.png">
 </p>
+
+
+<p align="center">
+  Representación textual
+</p>
+
+**Mientras continuar != 1**
+  **Mostrar "Ingrese dos numeros enteros por pantalla, por favor"**
+  **Mostrar "Primer número: "**
+  **Leer num1**
+  **Mostrar "Segundo número: **
+  **Leer num2**
+  **Mostrar "El resultado de la suma es: " num1 + num2**
+  **Mostrar "¿Desea continuar generando adiciones? Ingrese 0 si la respuesta es SI, de lo contrario ingrese un 1."**
+  **Leer continuar**
+  **Mientras continuar < 0 ó continuar > 1**
+    **Mostrar "ERROR. Debe de ingresar una de las opciones sugeridas anteriormente para continuar."**
+    **Leer continuar**
+  **Fin Mientras**
+**Fin Mientras**
