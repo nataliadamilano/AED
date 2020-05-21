@@ -47,7 +47,7 @@ descuentoExiste ∈ **bool**.
   Representación textual
 </p>
 
-   Inicio
+    Inicio
     
     //Ingreso nombre
     nombre = "Natalia";
