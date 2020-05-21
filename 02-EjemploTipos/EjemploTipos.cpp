@@ -64,7 +64,7 @@ int main()
         //Si pasa el assert entonces genero el descuento a partir del importe
         importeFinal = importe * descuento / 100;
         //Verifico que el importe final sea distinto de nulo
-        assert(importeFinal != NULL)
+        assert(importeFinal != NULL);
     }
     else
     {
