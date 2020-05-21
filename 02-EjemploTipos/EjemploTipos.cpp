@@ -32,7 +32,7 @@ int main()
     //Ingreso cod seguridad
     codSeguridad = 560;
     //Compruebo que el nro de tarjeta tenga un largo de 16 caracteres
-    assert(nroTarjeta.length() = 16);
+    assert(nroTarjeta.length() == 16);
     //Compruebo que el código de seguridad tenga un "largo" mayor o igual que 100 y menor o igual que 999
     assert((codSeguridad >= 100) && (codSeguridad <= 999));
     //Ingreso el valor del item 1
