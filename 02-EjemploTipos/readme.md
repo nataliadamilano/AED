@@ -4,11 +4,11 @@
 - **Refinamiento del problema e hipótesis de trabajo:** Primero he decidido recrear lo que sería una compra con tarjeta. Ingresaré los datos personales (nombre, apellido) y el número de tarjeta y código de seguridad.
 A partir de cierto importe verificaré qué tipo de factura es la que se asignó para saber si deberé de agregar un descuento al importe final o no.
 
-# Crédito Extra
+# #Crédito Extra
 ¿Son esos realmente todos los tipos que vimos en clase?
 Justifique.
 
-# Crédito Extra
+# #Crédito Extra
 No utilice cout y sí utilice assert para las pruebas.
 
 No, al dar la definición de tipos de variables sabemos que es un conjunto de valores establecidos en un dominio y un conjunto de operaciones con las cuales se puede operar.
@@ -40,6 +40,8 @@ descuento ∈ **const unasigned int**.
 
 
 descuentoExiste ∈ **bool**.
+
+
 
 - **Representación del Algoritmo:**
 
