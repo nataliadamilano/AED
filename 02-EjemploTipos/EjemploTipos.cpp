@@ -16,7 +16,7 @@ int main()
     string const nombre = "Natalia", apellido = "Damilano";
     string nombreCompleto, nroTarjeta;
     char tipoFactura;
-    int const codSeguridad = 560;
+    int codSeguridad;
     double valorItem1, valorItem2, importe, importeFinal;
     unsigned int descuento;
     bool descuentoExiste;
@@ -27,6 +27,8 @@ int main()
     nroTarjeta = "2324235643127645";
     //Compruebo que el nro de tarjeta tenga un largo de 16 caracteres
     assert(nroTarjeta.length() == 16);
+    //Ingreso código de seguridad
+    codSeguridad = 560;
     //Compruebo que el código de seguridad tenga un "largo" mayor o igual que 100 y menor o igual que 999
     assert((codSeguridad >= 100) || (codSeguridad <= 999));
     //Ingreso el valor del item 1
