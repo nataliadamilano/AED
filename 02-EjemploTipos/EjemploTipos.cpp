@@ -23,8 +23,8 @@ int main()
     //Ingreso apellido
     apellido = "Damilano";
     //Compruebo que nombre y apellido no sean vacíos con Assert
-    assert(apellido != apellido.empty);
-    assert(nombre != nombre.empty);
+    assert(apellido != '\0');
+    assert(nombre != '\0');
     //Anido nombre y apellido
     nombreCompleto = nombre + "" + apellido;
     //Ingreso nro tarjeta
@@ -34,14 +34,17 @@ int main()
     //Compruebo que el nro de tarjeta tenga un largo de 16 caracteres
     assert(nroTarjeta.length() == 16);
     //Compruebo que el código de seguridad tenga un "largo" mayor o igual que 100 y menor o igual que 999
-    assert((codSeguridad >= 100) && (codSeguridad <= 999));
+    assert(codSeguridad >= 100);
+    assert(codSeguridad <= 999);
     //Ingreso el valor del item 1
     valorItem1 = 530.60;
     //Ingreso el valor del item 2
     valorItem2 = 685.33;
     //Compruebo que los valores no sean negativos y que no sean nulos
-    assert(valorItem1 > 0 && (valorItem1 != NULL));
-    assert(valorItem2 > 0 && (valorItem2 != NULL));
+    assert(valorItem1 > 0);
+    assert(*valorItem1 != NULL);
+    assert(valorItem2 > 0);
+    assert(*valorItem2 != NULL);
     //Sumo los valores para que me de el importe a abonar
     importe = valorItem1 + valorItem2;
     //Ingreso el importe final hasta el momento
@@ -53,7 +56,8 @@ int main()
     //Ingreso el valor del descuento
     descuento = 30;
     //Compruebo que el descuento sea mayor a 0 y menor o igual que 100
-    assert((descuento > 0) && (descuento <= 100));
+    assert(descuento > 0);
+    assert(*descuento <= 100);
 
     //Compruebo el tipo de factura para ver si agrego descuento o no utilizando el booleano "descuentoExiste"
     if (tipoFactura == 'B')
