@@ -13,27 +13,18 @@ using namespace std;
 
 int main()
 {
-    string const nombre, apellido, nroTarjeta;
-    string nombreCompleto;
-    char const tipoFactura;
-    int const codSeguridad;
-    double const valorItem1, valorItem2;
-    double importe, importeFinal;
-    unsigned int const descuento;
+    string const nombre = "Natalia", apellido = "Damilano";
+    string nombreCompleto, nroTarjeta;
+    char tipoFactura;
+    int const codSeguridad = 560;
+    double valorItem1, valorItem2, importe, importeFinal;
+    unsigned int descuento;
     bool descuentoExiste;
 
-    //Ingreso nombre
-    nombre = "Natalia";
-    //Ingreso apellido
-    apellido = "Damilano";
-    //Compruebo que nombre y apellido no sean vacíos con Assert
-    assert((apellido != "") && (nombre != ""));
     //Anido nombre y apellido
     nombreCompleto = nombre + "" + apellido;
     //Ingreso nro tarjeta
     nroTarjeta = "2324235643127645";
-    //Ingreso cod seguridad
-    codSeguridad = 560;
     //Compruebo que el nro de tarjeta tenga un largo de 16 caracteres
     assert(nroTarjeta.length() == 16);
     //Compruebo que el código de seguridad tenga un "largo" mayor o igual que 100 y menor o igual que 999
@@ -71,7 +62,7 @@ int main()
     else
     {
         importeFinal = importe;
-        //Verifico que el importe final sea distinto de cero
+        //Verifico que el importe final sea distinto de nulo
         assert(importeFinal != 0);
     }
 }
