@@ -32,7 +32,7 @@ int main()
     //Ingreso cod seguridad
     codSeguridad = 560;
     //Compruebo que el nro de tarjeta tenga un largo de 16 caracteres
-    assert(nroTarjeta.length = 16);
+    assert(nroTarjeta.length == 16);
     //Compruebo que el código de seguridad tenga un "largo" mayor o igual que 100 y menor o igual que 999
     assert((codSeguridad >= 100) && (codSeguridad <= 999));
     //Ingreso el valor del item 1
@@ -49,7 +49,7 @@ int main()
     //Ingreso tipo factura (A, B, C, etc)
     tipoFactura = 'B';
     //Compruebo el ingreso de la factura
-    assert(tipoFactura <> NULL);
+    assert(tipoFactura != NULL);
     //Ingreso el valor del descuento
     descuento = 30;
     //Compruebo que el descuento sea mayor a 0 y menor o igual que 100
@@ -64,6 +64,6 @@ int main()
         //Si pasa el assert entonces genero el descuento a partir del importe
         importeFinal *= descuento / 100;
         //Verifico que el importe final sea distinto de nulo
-        assert(importeFinal <> NULL);
+        assert(importeFinal != NULL);
     }
 }
