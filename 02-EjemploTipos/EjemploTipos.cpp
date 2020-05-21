@@ -23,8 +23,8 @@ int main()
     //Ingreso apellido
     apellido = "Damilano";
     //Compruebo que nombre y apellido no sean vacíos con Assert
-    assert(apellido != apellido.empty);
-    assert(nombre != nombre.empty);
+    assert(apellido != "");
+    assert(nombre != "");
     //Anido nombre y apellido
     nombreCompleto = nombre + "" + apellido;
     //Ingreso nro tarjeta
@@ -45,6 +45,8 @@ int main()
     assert(valorItem2 > 0);
     //Sumo los valores para que me de el importe a abonar
     importe = valorItem1 + valorItem2;
+    //Inicializo importeFinal en cero
+    importeFinal = 0;
     //Ingreso tipo factura (A, B, C, etc)
     tipoFactura = 'B';
     //Compruebo el ingreso de la factura
@@ -64,10 +66,12 @@ int main()
         //Si pasa el assert entonces genero el descuento a partir del importe
         importeFinal = importe * descuento / 100;
         //Verifico que el importe final sea distinto de nulo
-        assert(importeFinal != NULL);
+        assert(importeFinal != 0);
     }
     else
     {
         importeFinal = importe;
+        //Verifico que el importe final sea distinto de nulo
+        assert(importeFinal != 0);
     }
 }
