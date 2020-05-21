@@ -13,11 +13,13 @@ using namespace std;
 
 int main()
 {
-    string nombre, apellido, nombreCompleto, nroTarjeta;
-    char tipoFactura;
-    int codSeguridad;
-    double valorItem1, valorItem2, importe, importeFinal;
-    unsigned int descuento;
+    string const nombre, apellido, nroTarjeta;
+    string nombreCompleto;
+    char const tipoFactura;
+    int const codSeguridad;
+    double const valorItem1, valorItem2;
+    double importe, importeFinal;
+    unsigned int const descuento;
     bool descuentoExiste;
 
     //Ingreso nombre
@@ -69,7 +71,7 @@ int main()
     else
     {
         importeFinal = importe;
-        //Verifico que el importe final sea distinto de nulo
+        //Verifico que el importe final sea distinto de cero
         assert(importeFinal != 0);
     }
 }
