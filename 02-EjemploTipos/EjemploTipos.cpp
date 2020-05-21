@@ -6,7 +6,7 @@
 
 #include <iostream>
 #include <assert.h>     /* assert */
-
+#include <string>
 using namespace std;
 
 int main()
