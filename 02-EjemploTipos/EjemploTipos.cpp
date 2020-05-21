@@ -42,9 +42,9 @@ int main()
     valorItem2 = 685.33;
     //Compruebo que los valores no sean negativos y que no sean nulos
     assert(valorItem1 > 0);
-    assert(*valorItem1 != NULL);
+    assert(valorItem1 != NULL);
     assert(valorItem2 > 0);
-    assert(*valorItem2 != NULL);
+    assert(valorItem2 != NULL);
     //Sumo los valores para que me de el importe a abonar
     importe = valorItem1 + valorItem2;
     //Ingreso el importe final hasta el momento
@@ -57,7 +57,7 @@ int main()
     descuento = 30;
     //Compruebo que el descuento sea mayor a 0 y menor o igual que 100
     assert(descuento > 0);
-    assert(*descuento <= 100);
+    assert(descuento <= 100);
 
     //Compruebo el tipo de factura para ver si agrego descuento o no utilizando el booleano "descuentoExiste"
     if (tipoFactura == 'B')
