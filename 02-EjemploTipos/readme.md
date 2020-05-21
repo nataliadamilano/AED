@@ -19,24 +19,21 @@ Un ejemplo sería el tipo de dato *color*. Su dominio son todos los colores. El 
 
 - **Léxico del Algoritmo:** 
 
-nombre, apellido, nroTarjeta ∈ **const string**.
+nombre, apellido ∈ **const string**.
 
 
-nombreCompleto ∈ **string**.
+nombreCompleto, nroTarjeta ∈ **string**.
 
-tipoFactura ∈ **const char**.
-
-
-codSeguridad ∈ **const int**.
+tipoFactura ∈ **char**.
 
 
-valorItem1, valorItem2,  ∈ **const double**.
+codSeguridad ∈ **int**.
 
 
-importe, importeFinal ∈ **double**.
+valorItem1, valorItem2, importe, importeFinal  ∈ **double**.
 
 
-descuento ∈ **const unasigned int**.
+descuento ∈ **unasigned int**.
 
 
 descuentoExiste ∈ **bool**.
@@ -51,10 +48,8 @@ descuentoExiste ∈ **bool**.
 
     Inicio
     
-    //Ingreso nombre
     nombre = "Natalia";
     
-    //Ingreso apellido
     apellido = "Damilano";
     
     //Anido nombre y apellido
