@@ -1,12 +1,14 @@
 /* 02-EjemploTipos
- * 
+ * Se ingresan los datos para la realización de una compra con tarjeta de débito (nombre, apellido, nro tarjeta, código de seguridad)
+   y los valores de los dos items que se van a comprar. Dependiendo de si la factura es de tipo "B" se le hará un descuento al cliente.
  * Natalia Belén Damilano
  * 20/5/2020
  */
 
 #include <iostream>
-#include <assert.h>     /* assert */
+#include <assert.h>     
 #include <string>
+
 using namespace std;
 
 int main()
@@ -23,8 +25,7 @@ int main()
     //Ingreso apellido
     apellido = "Damilano";
     //Compruebo que nombre y apellido no sean vacíos con Assert
-    assert(apellido != "");
-    assert(nombre != "");
+    assert((apellido != "") && (nombre != ""));
     //Anido nombre y apellido
     nombreCompleto = nombre + "" + apellido;
     //Ingreso nro tarjeta
@@ -34,15 +35,13 @@ int main()
     //Compruebo que el nro de tarjeta tenga un largo de 16 caracteres
     assert(nroTarjeta.length() == 16);
     //Compruebo que el código de seguridad tenga un "largo" mayor o igual que 100 y menor o igual que 999
-    assert(codSeguridad >= 100);
-    assert(codSeguridad <= 999);
+    assert((codSeguridad >= 100) || (codSeguridad <= 999));
     //Ingreso el valor del item 1
     valorItem1 = 530.60;
     //Ingreso el valor del item 2
     valorItem2 = 685.33;
     //Compruebo que los valores no sean negativos y que no sean nulos
-    assert(valorItem1 > 0);
-    assert(valorItem2 > 0);
+    assert((valorItem1 > 0) && (valorItem2 > 0));
     //Sumo los valores para que me de el importe a abonar
     importe = valorItem1 + valorItem2;
     //Inicializo importeFinal en cero
@@ -54,8 +53,7 @@ int main()
     //Ingreso el valor del descuento
     descuento = 30;
     //Compruebo que el descuento sea mayor a 0 y menor o igual que 100
-    assert(descuento > 0);
-    assert(descuento <= 100);
+    assert((descuento > 0) || (descuento <= 100));
 
     //Compruebo el tipo de factura para ver si agrego descuento o no utilizando el booleano "descuentoExiste"
     if (tipoFactura == 'B')
