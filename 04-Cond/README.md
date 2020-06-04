@@ -1,6 +1,26 @@
 # Etapa #1: Análisis del Problema
 
-- **Transcripción del problema:** Se pide al usuario que ingrese por teclado dos números, luego se deberá de mostrar por pantalla la suma de estos.
+- **Transcripción del problema:** Se deben de realizar las siguientes funciones:
+
+1. Valor absoluto.
+2. Valor mínimo entre dos valores.
+3. Función , definida por:
+
+         ^    /
+         |   /
+         |  /
+      *  3 o
+       \ |
+        \|
+<-----3--0--3----->
+         |\
+         | \
+      o -3  *
+     /   |
+    /    |
+   /     v
+
+
 - **Refinamiento del problema e hipótesis de trabajo:**
 
 
