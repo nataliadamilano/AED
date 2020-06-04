@@ -26,7 +26,7 @@
 Separaríamos como un proyecto individual cada función. 
 La función valor absoluto debería respetar un dominio de enteros **ℤ** con una respectiva imagen en **ℤ**.
 La función valor mínimo la representaría con reales **ℝ**.
-La función por partes **F3** debería de estar definida en los reales **ℝ->ℝ**.
+La función por partes **F3** debería de estar definida en los reales **ℝ→ℝ**.
 
 Definiría el prototipo de cada función, asignándole un nombre identificable y con qué tipo de valores trabajaría (si enteros, reales, etc).
 
@@ -41,6 +41,6 @@ En cada proyecto haría pruebas con distintos valores teniendo en cuenta el aná
 
 - **Léxico del Algoritmo:** 
 
-1. Función Valor Absoluto: **Abs: ℤ -> ℤ/Abs(x) = |x| = { -x,  x < 0; x e.o.c }**
+1. Función Valor Absoluto: **Abs: ℤ→ℤ/Abs(x) = |x| = { -x,  x < 0; x e.o.c }**
 2. Función valor Mínimo entre dos valores: **Min: a,b ∈ ℝ / Min(a,b) = { a, a < b; b e.o.c}**
-3. Función por partes F3: **F3: ℝ->ℝ / F3(x) = { -x, x >= -3 ^ x <= 3; x e.o.c }**
+3. Función por partes F3: **F3: ℝ→ℝ / F3(x) = { -x, x >= -3 ^ x <= 3; x e.o.c }**
