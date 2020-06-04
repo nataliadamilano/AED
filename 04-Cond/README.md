@@ -41,6 +41,6 @@ En cada proyecto haría pruebas con distintos valores teniendo en cuenta el aná
 
 - **Léxico del Algoritmo:** 
 
-Función Valor Absoluto: **Abs: ℤ -> ℤ/Abs(x) = |x| = { -x,  x < 0; x e.o.c }**
-Función valor Mínimo entre dos valores: **Min: a,b ∈ ℝ / Min(a,b) = { a, a < b; b e.o.c}**
-Función por partes F3: **F3: ℝ->ℝ / F3(x) = { -x, x >= -3 ^ x <= 3; x e.o.c }**
+- Función Valor Absoluto: **Abs: ℤ -> ℤ/Abs(x) = |x| = { -x,  x < 0; x e.o.c }**
+- Función valor Mínimo entre dos valores: **Min: a,b ∈ ℝ / Min(a,b) = { a, a < b; b e.o.c}**
+- Función por partes F3: **F3: ℝ->ℝ / F3(x) = { -x, x >= -3 ^ x <= 3; x e.o.c }**
