@@ -6,10 +6,10 @@
 2. Valor mínimo entre dos valores.
 3. Función **F3**, definida por:
 
-                  ^    /
+                  ^     /
+                  |    /
                   |   /
-                  |  /
-               *  3 o
+               *  3  o
                 \ |
                  \|
          <-----3--0--3----->
