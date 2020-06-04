@@ -43,4 +43,4 @@ En cada proyecto haría pruebas con distintos valores teniendo en cuenta el aná
 
 1. Función Valor Absoluto: **Abs: ℤ→ℤ/Abs(x) = |x| = { -x si  x < 0; x e.o.c }**
 2. Función valor Mínimo entre dos valores: **Min: a,b ∈ ℝ / Min(a,b) = { a si a < b; b e.o.c}**
-3. Función por partes F3: **F3: ℝ→ℝ / F3(x) = { -x si x >= -3 ^ x <= 3; x e.o.c }**
+3. Función por partes F3: **F3: ℝ→ℝ / F3(x) = { -x si x >= -3; -x si x <= 3; x e.o.c }**
