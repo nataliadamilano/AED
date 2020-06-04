@@ -4,7 +4,7 @@
 
 1. Valor absoluto.
 2. Valor mínimo entre dos valores.
-3. Función F3, definida por:
+3. Función **F3**, definida por:
 
                   ^    /
                   |   /
