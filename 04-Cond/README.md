@@ -25,7 +25,7 @@
 
 Separaríamos como un proyecto individual cada función. 
 La función valor absoluto debería respetar un dominio de enteros **ℤ** con una respectiva imagen en **ℤ**.
-La función valor mínimo la representaría con reales **ℝ**.
+La función valor mínimo entre dos valores la representaría con reales **ℝ**.
 La función por partes **F3** debería de estar definida en los reales **ℝ→ℝ**.
 
 Definiría el prototipo de cada función, asignándole un nombre identificable y con qué tipo de valores trabajaría (si enteros, reales, etc).
