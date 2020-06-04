@@ -6,19 +6,19 @@
 2. Valor mínimo entre dos valores.
 3. Función , definida por:
 
-         ^    /
-         |   /
-         |  /
-      *  3 o
-       \ |
-        \|
-<-----3--0--3----->
-         |\
-         | \
-      o -3  *
-     /   |
-    /    |
-   /     v
+                  ^    /
+                  |   /
+                  |  /
+               *  3 o
+                \ |
+                 \|
+         <-----3--0--3----->
+                  |\
+                  | \
+               o -3  *
+              /   |
+             /    |
+            /     v
 
 
 - **Refinamiento del problema e hipótesis de trabajo:**
