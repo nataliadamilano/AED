@@ -38,7 +38,7 @@ Entonces,
    *El valor de verdad de esta proposición compuesta dependerá del valor que tenga **anio**.*
    
    
-- **REPRESENTACIÓN DEL ALGORITMO:**
+- **REPRESENTACIÓN DEL ALGORITMO**
 - - - - - - - - - - - - - - - - - -
 <p align="center">
   Representación visual
@@ -48,7 +48,7 @@ Entonces,
 </p>
 
 
-- **ÁRBOL DE EXPRESIÓN:**
+- **ÁRBOL DE EXPRESIÓN**
 - - - - - - - - - - - - -
 
 <p align="center">
