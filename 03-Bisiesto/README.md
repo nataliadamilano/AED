@@ -44,7 +44,7 @@ Entonces,
   Representación visual
 </p>
 <p align="center">
-<img src="https://user-images.githubusercontent.com/50343556/80672894-2650e600-8aae-11ea-8b0f-e460e0f53ef0.png">
+<img src="https://github.com/nataliadamilano/AED/blob/master/03-Bisiesto/DDF-Bisiesto.PNG">
 </p>
 
 
