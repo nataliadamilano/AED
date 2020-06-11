@@ -13,7 +13,7 @@ Se definirá una función que dado un año determinará si es bisiesto o no. El 
 # Etapa #2 Diseño de la Solución
 
 
-- **Léxico del algoritmo:** anio ∈ **ℕ**, IsBisiesto() ∈ **B (bool)**
+- **Léxico del algoritmo:** anio ∈ **ℕ**, IsBisiesto() ∈ **ℕxB (bool)**
 - **Léxico de la función:** Definiré a la función IsBisiesto(anio) como una proposición compuesta.
 
 
