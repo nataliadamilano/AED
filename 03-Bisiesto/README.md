@@ -7,7 +7,7 @@ Se definirá una función que dado un año determinará si es bisiesto o no. El 
 
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/50343556/80669330-69a65700-8aa4-11ea-991b-1fc9240a54c0.png">
+<img src="https://github.com/nataliadamilano/AED/blob/master/03-Bisiesto/modeloIPO-Bisiesto.PNG">
 </p>
 
 # Etapa #2 Diseño de la Solución
