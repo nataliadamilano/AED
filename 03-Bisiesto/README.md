@@ -20,7 +20,7 @@ Se definirá una función que dado un año determinará si es bisiesto o no. El 
 Entonces,
 
 
-   **m** ^ **p** v **q** ^ ~ **r** donde:
+   **m** ^ [**p** v (**q** ^ ~ **r**)] donde:
    
 
   **m**: "anio es mayor a 1582".
