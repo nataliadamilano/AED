@@ -38,6 +38,7 @@ Entonces,
    *El valor de verdad de esta proposición compuesta dependerá del valor que tenga **anio**.*
    
    
+   
 - **REPRESENTACIÓN DEL ALGORITMO**
 - - - - - - - - - - - - - - - - - -
 <p align="center">
