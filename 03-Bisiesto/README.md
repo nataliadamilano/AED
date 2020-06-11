@@ -38,7 +38,7 @@ Entonces,
    *El valor de verdad de esta proposición compuesta dependerá del valor que tenga **anio**.*
    
    
-- **Representación del Algoritmo:**
+- **REPRESENTACIÓN DEL ALGORITMO:**
 
 <p align="center">
   Representación visual
@@ -48,7 +48,7 @@ Entonces,
 </p>
 
 
-- **Árbol de expresión**
+- **ÁRBOL DE EXPRESIÓN**
 
 <p align="center">
 <img src="https://github.com/nataliadamilano/AED/blob/master/03-Bisiesto/ArbExpr-Bisiesto.png">
