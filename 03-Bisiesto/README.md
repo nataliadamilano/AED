@@ -6,7 +6,7 @@
 Se definirá una función que dado un año determinará si es bisiesto o no. El dominio de la función que voy a utilizar es ℕxℕ. Para determinar si es bisiesto, hice una investigación (por internet) para saber más a detalle sobre este tema. Según fuentes de internet como Wikipedia (https://es.wikipedia.org/wiki/A%C3%B1o_bisiesto) los años bisiestos comenzaron a partir del año 1582, por lo que, tendré en cuenta los años que sean mayores a éste.
 
 ## MODELO IPO
-- - - - - - - 
+
 <p align="center">
 <img src="https://github.com/nataliadamilano/AED/blob/master/03-Bisiesto/modeloIPO-Bisiesto.PNG">
 </p>
