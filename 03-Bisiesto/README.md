@@ -13,8 +13,21 @@ Se definirá una función que dado un año determinará si es bisiesto o no. El 
 # Etapa #2 Diseño de la Solución
 
 
-- **Léxico del Algoritmo:** num1, num2, continuar ∈ **Z**
+- **Léxico del algoritmo:** anio ∈ **ℕ**, IsBisiesto() ∈ **B (bool)**
+- **Léxico de la función:** Definiré a la función IsBisiesto(anio) como una proposición compuesta.
+Entonces,
 
+  **m**: "anio es mayor a 1582".
+  **p**: "anio dividido 400 tiene resto igual a cero".
+  **q**: "anio dividido 4 tiene resto igual a cero".
+  **r**: "anio dividido 100 tiene resto igual a cero".
+    
+    
+   m ^ p v q ^ ~ r 
+    
+   **El valor de verdad de esta proposición compuesta dependerá del valor que tenga anio.**
+   
+   
 - **Representación del Algoritmo:**
 
 <p align="center">
