@@ -14,6 +14,5 @@ int main()
 
 bool IsBisiesto(unsigned anio)
 {
-	//return ((anio > 1582) and (anio%4 == 0) and (not (anio%100 == 0)) or (anio%400 == 0);
-	return (anio > 1582) and (anio % 400 == 0) or (anio % 4 == 0) and not(anio % 100 == 0);
+	return ((anio > 1582) and ((anio % 400 == 0) or ((anio % 4 == 0) and not(anio % 100 == 0))));
 }
