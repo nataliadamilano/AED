@@ -20,6 +20,9 @@ Se definirá una función que dado un año determinará si es bisiesto o no. El 
 Entonces,
 
 
+   **m** ^ **p** v **q** ^ ~ **r** 
+   
+
   **m**: "anio es mayor a 1582".
   
   
@@ -31,8 +34,6 @@ Entonces,
   
   **r**: "anio dividido 100 tiene resto igual a cero".
     
-    
-   **m** ^ **p** v **q** ^ ~ **r** 
     
    *El valor de verdad de esta proposición compuesta dependerá del valor que tenga **anio**.*
    
