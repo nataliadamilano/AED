@@ -15,7 +15,10 @@ Se definirá una función que dado un año determinará si es bisiesto o no. El 
 
 - **Léxico del algoritmo:** anio ∈ **ℕ**, IsBisiesto() ∈ **B (bool)**
 - **Léxico de la función:** Definiré a la función IsBisiesto(anio) como una proposición compuesta.
+
+
 Entonces,
+
 
   **m**: "anio es mayor a 1582".
   
