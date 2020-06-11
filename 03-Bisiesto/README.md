@@ -32,7 +32,7 @@ Entonces,
   **r**: "anio dividido 100 tiene resto igual a cero".
     
     
-   **m** ^ **p** v **q** ^ **~ r** 
+   **m** ^ **p** v **q** ^ ~ **r** 
     
    *El valor de verdad de esta proposición compuesta dependerá del valor que tenga **anio**.*
    
