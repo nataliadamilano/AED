@@ -18,8 +18,14 @@ Se definirá una función que dado un año determinará si es bisiesto o no. El 
 Entonces,
 
   **m**: "anio es mayor a 1582".
+  
+  
   **p**: "anio dividido 400 tiene resto igual a cero".
+  
+  
   **q**: "anio dividido 4 tiene resto igual a cero".
+  
+  
   **r**: "anio dividido 100 tiene resto igual a cero".
     
     
