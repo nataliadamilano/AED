@@ -39,7 +39,7 @@ Entonces,
    
    
 - **REPRESENTACIÓN DEL ALGORITMO:**
-
+- - - - - - - - - - - - - - - - - -
 <p align="center">
   Representación visual
 </p>
@@ -48,7 +48,8 @@ Entonces,
 </p>
 
 
-- **ÁRBOL DE EXPRESIÓN**
+- **ÁRBOL DE EXPRESIÓN:**
+- - - - - - - - - - - - -
 
 <p align="center">
 <img src="https://github.com/nataliadamilano/AED/blob/master/03-Bisiesto/ArbExpr-Bisiesto.png">
