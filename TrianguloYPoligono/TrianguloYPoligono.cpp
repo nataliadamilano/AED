@@ -7,6 +7,10 @@
 #include <iostream>
 #include <cassert>
 #include <math.h>
+#include <limits>
+
+typedef std::numeric_limits< float > dbl;
+
 
 using namespace std;
 
@@ -52,13 +56,13 @@ void SetPuntoTriangulo(Triangulo& triangulo, const Punto& puntoAModificar, const
 
 Colores GetColorTriangulo(const Triangulo& triangulo);
 
-double GetPerimetroTriangulo(const Triangulo& triangulo);
+float GetPerimetroTriangulo(const Triangulo& triangulo);
 
-string GetTipoDeTriangulo(const Triangulo& triangulo); // No desarrollada.
+string GetTipoDeTriangulo(const Triangulo& triangulo);
 
 unsigned GetAreaTriangulo(const Triangulo& triangulo); // No desarrollada. Hay que tener en cuenta si el triángulo es equilátero, isósceles o si se conoce la altura del mismo.
 
-double GetDistancia(const Punto& punto1, const Punto& punto2);
+float GetDistancia(const Punto& punto1, const Punto& punto2);
 
 // Fin Funciones Triángulo.
 
@@ -78,23 +82,25 @@ int main()
     // cout << "(" << GetPuntoPoligono(poligono1, 2).x << ", " << GetPuntoPoligono(poligono1, 2).y << ")" << endl;
 
     /* Bucle que recorre todos los puntos que pertenecen a poligono1 y los imprime por pantalla. */
-     for (int i = 0; i < poligono.n; i++)
-     {
-         cout << "(" << poligono.puntos[i].x << ", " << poligono.puntos[i].y << ")";
-     }
+    //  for (int i = 0; i < poligono.n; i++)
+    //  {
+    //      cout << "(" << poligono.puntos[i].x << ", " << poligono.puntos[i].y << ")";
+    //  }
 
 
     /* Defino mi struct de tipo Triangulo llamado triangulo, que me servirá para representar esta figura geométrica. */
-    Triangulo triangulo{ {{{0,0}, {3,0}, {0,3}}}, Colores::amarillo };
+    Triangulo triangulo{ {{{-1,1}, {3,1}, {1,-2.464101615}}}, Colores::amarillo };
 
     // SetPuntoTriangulo(triangulo, { 3,0 }, { 2,3 });
 
-    for (int i = 0; i < triangulo.puntos.size(); i++)
-    {
-        cout << "(" << triangulo.puntos[i].x << ", " << triangulo.puntos[i].y << ")";
-    }
+    cout << GetTipoDeTriangulo(triangulo);
 
-    cout << endl << "Su perímetro es: " << GetPerimetroTriangulo(triangulo);
+    // for (int i = 0; i < triangulo.puntos.size(); i++)
+    // {
+    //     cout << "(" << triangulo.puntos[i].x << ", " << triangulo.puntos[i].y << ")";
+    // }
+
+    //  cout << endl << "Su perímetro es: " << GetPerimetroTriangulo(triangulo);
 
 }
 
@@ -152,18 +158,46 @@ Colores GetColorTriangulo(const Triangulo& triangulo)
     return triangulo.color;
 }
 
-double GetPerimetroTriangulo(const Triangulo& triangulo)
+float GetPerimetroTriangulo(const Triangulo& triangulo)
 {
-    double ladoA = GetDistancia(triangulo.puntos.at(0), triangulo.puntos.at(1));
+    float ladoA = GetDistancia(triangulo.puntos.at(0), triangulo.puntos.at(1));
 
-    double ladoB = GetDistancia(triangulo.puntos.at(1), triangulo.puntos.at(2));
+    float ladoB = GetDistancia(triangulo.puntos.at(1), triangulo.puntos.at(2));
 
-    double ladoC = GetDistancia(triangulo.puntos.at(2), triangulo.puntos.at(0));
+    float ladoC = GetDistancia(triangulo.puntos.at(2), triangulo.puntos.at(0));
 
     return ladoA + ladoB + ladoC;
 }
 
-double GetDistancia(const Punto& punto1, const Punto& punto2)
+float GetDistancia(const Punto& punto1, const Punto& punto2)
 {
     return sqrt(pow((punto2.x - punto1.x), 2) + pow((punto2.y - punto1.y), 2));
+}
+
+string GetTipoDeTriangulo(const Triangulo& triangulo)
+{
+    float ladoA = GetDistancia(triangulo.puntos.at(0), triangulo.puntos.at(1));
+
+
+    float ladoB = GetDistancia(triangulo.puntos.at(1), triangulo.puntos.at(2));
+
+
+    float ladoC = GetDistancia(triangulo.puntos.at(2), triangulo.puntos.at(0));
+
+    string respuesta;
+
+    if (ladoA == ladoB && ladoA == ladoC) {
+        respuesta = "El triángulo es equilátero.";
+    }
+    else if ((ladoA == ladoB && ladoA != ladoC) || (ladoA == ladoC && ladoA != ladoB) || (ladoC == ladoB && ladoC != ladoA))
+    {
+        respuesta = "El triángulo es isósceles.";
+    }
+    else
+    {
+        respuesta = "El triángulo es escaleno.";
+    }
+
+    return respuesta;
+
 }
