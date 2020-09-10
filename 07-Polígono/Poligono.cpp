@@ -1,3 +1,11 @@
+/* 07-Polígono
+ * Se pide realizar un tipo de dato Polígono con ciertas cualidades como el representarlo con un color. Además se pidió desarrollar las funciones AddVértice, GetVértice, SetVértice, RemoveVértice,
+ * GetCantidadLados, y GetGetPerímetro.
+ *
+ * Natalia Belén Damilano
+ * 10/09/2020
+ */
+
 #include <array>
 #include <cassert>
 #include <math.h>
