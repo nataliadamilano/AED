@@ -4,4 +4,4 @@
 
 ### **Mezclar**:
 
-*Mezclar: Color x Color -> Color *
+*Mezclar: Color x Color -> Color*
