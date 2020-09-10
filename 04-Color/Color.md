@@ -9,7 +9,7 @@
 
 ### **Función MezclarProporciones**
 
-*MezclarProporciones: Color x Color, unsigned x unsigned -> Color*
+*MezclarProporciones: Color x Color, **Z** x **Z** -> Color*
 
 
 ### **Función Sumar**
