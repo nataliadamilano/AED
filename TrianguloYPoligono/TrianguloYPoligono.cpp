@@ -82,10 +82,10 @@ int main()
     // cout << "(" << GetPuntoPoligono(poligono1, 2).x << ", " << GetPuntoPoligono(poligono1, 2).y << ")" << endl;
 
     /* Bucle que recorre todos los puntos que pertenecen a poligono1 y los imprime por pantalla. */
-    //  for (int i = 0; i < poligono.n; i++)
-    //  {
-    //      cout << "(" << poligono.puntos[i].x << ", " << poligono.puntos[i].y << ")";
-    //  }
+      //for (int i = 0; i < poligono.n; i++)
+      //{
+      //    cout << "(" << poligono.puntos[i].x << ", " << poligono.puntos[i].y << ")";
+      //}
 
 
     /* Defino mi struct de tipo Triangulo llamado triangulo, que me servirá para representar esta figura geométrica. */

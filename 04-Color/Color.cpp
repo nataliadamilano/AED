@@ -12,13 +12,13 @@ const uint8_t MIN = 0;
 
 struct Color { uint8_t red, green, blue; };
 
-Color Mezclar(const Color& color1, const Color& color2);
-Color MezclarProporciones(const Color& color1, unsigned partesColor1, const Color& color2, unsigned partesColor2);
-Color Sumar(const Color& color1, const Color& color2);
-Color Restar(const Color& color1, const Color& color2);
-Color GetComplementario(const Color& color);
-string GetHtmlHex(const Color& color);
-bool IsIgual(const Color& color1, const Color& color2);
+Color Mezclar(Color color1, Color color2);
+Color MezclarProporciones(Color color1, unsigned partesColor1, Color color2, unsigned partesColor2);
+Color Sumar(Color color1, Color color2);
+Color Restar(Color color1, Color color2);
+Color GetComplementario(Color color);
+string GetHtmlHex(Color color);
+bool IsIgual(Color color1, Color color2);
 
 /* COLORES PRIMARIOS */
 const Color rojo{ 255,0,0 };
@@ -40,7 +40,7 @@ int main()
     cout << GetHtmlHex(rojo);
 }
 
-Color Mezclar(const Color& color1, const Color& color2)
+Color Mezclar(Color color1, Color color2)
 {
     uint8_t avgRed = (color1.red + color2.red) / 2;
     cout << unsigned(avgRed) << endl;
@@ -53,7 +53,7 @@ Color Mezclar(const Color& color1, const Color& color2)
     return { avgRed, avgGreen, avgBlue };
 }
 
-Color MezclarProporciones(const Color& color1, unsigned partesColor1, const Color& color2, unsigned partesColor2)
+Color MezclarProporciones(Color color1, unsigned partesColor1, Color color2, unsigned partesColor2)
 {
     uint8_t avgRed = (color1.red + color2.red) / (partesColor1 + partesColor2);
     cout << unsigned(avgRed) << endl;
@@ -66,7 +66,7 @@ Color MezclarProporciones(const Color& color1, unsigned partesColor1, const Colo
 }
 
 
-Color Sumar(const Color& color1, const Color& color2)
+Color Sumar(Color color1, Color color2)
 {
     uint8_t sumRed = color1.red + color2.red > MAX ? MAX : color1.red + color2.red;
     uint8_t sumGreen = color1.green + color2.green > MAX ? MAX : color1.green + color2.green;
@@ -75,7 +75,7 @@ Color Sumar(const Color& color1, const Color& color2)
     return { sumRed, sumGreen, sumBlue };
 }
 
-Color Restar(const Color& color1, const Color& color2)
+Color Restar(Color color1, Color color2)
 {
     uint8_t sumRed = color1.red - color2.red < MIN ? MIN : color1.red - color2.red;
     uint8_t sumGreen = color1.green - color2.green < MIN ? MIN : color1.green - color2.green;
@@ -84,14 +84,14 @@ Color Restar(const Color& color1, const Color& color2)
     return { sumRed, sumGreen, sumBlue };
 }
 
-Color GetComplementario(const Color& color)
+Color GetComplementario(Color color)
 {
     return color.red == rojo.red && color.green == rojo.green && color.blue == rojo.blue ? cian :
         color.red == verde.red && color.green == verde.green && color.blue == verde.blue ? magenta :
         amarillo;
 }
 
-string GetHtmlHex(const Color& color)
+string GetHtmlHex(Color color)
 {
     char hexaColor[7];
     sprintf(hexaColor, "#%02x%02x%02x", color.red, color.green, color.blue);
@@ -99,7 +99,7 @@ string GetHtmlHex(const Color& color)
     return hexaColor;
 }
 
-bool IsIgual(const Color& color1, const Color& color2)
+bool IsIgual(Color color1, Color color2)
 {
     return color1.red == color2.red && color1.green == color2.green && color1.blue == color2.blue;
 }
