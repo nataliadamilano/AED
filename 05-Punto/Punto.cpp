@@ -1,4 +1,10 @@
-/**/
+/* 05-Punto
+ * Se pide realizar un tipo de dato Punto que representa un punto en plano como coordenadas cartesianas. Además, se deberán desarrollar las funciones IsIgual, GetDistancia, y
+ * GetDistanciaAlOrigen.
+ *
+ * Natalia Belén Damilano
+ * 10/09/2020
+ */
 
 #include "Punto.h"
 #include <cassert>
