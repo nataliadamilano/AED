@@ -78,12 +78,12 @@ int main()
 	assert(Eje::X == GetEje2(puntoF, puntoF.x));
 	assert(Eje::X == GetEje2(puntoI, puntoI.x) && Eje::Y == GetEje2(puntoI, puntoI.y));
 
-	assert(4 == Mover(puntoA, { 4,-2 }).x && -2 == Mover(puntoA, { 4,-2 }).y);
-	assert(3 != Mover(puntoA, { 7,-4.3 }).x && 0 != Mover(puntoA, { 7,-4.3 }).y);
-	assert(0 == Mover(puntoE, { 0,0 }).x && 0 == Mover(puntoE, { 0,0 }).y);
-	assert(1.5 != Mover(puntoE, { 0,1.5 }).x && 0 != Mover(puntoE, { 0,1.5 }).y);
-	assert(6 == Mover(puntoI, { 6,-3 }).x && -3 == Mover(puntoI, { 6,-3 }).y);
-	assert(0 == Mover(puntoF, { 0,0 }).x && 0 == Mover(puntoF, { 0,0 }).y);
+	assert(IsIgual({ 4,-2 }, Mover(puntoA, { 4, -2 })));
+	assert(!IsIgual({ 3,0 }, Mover(puntoA, { 7, -4.3 })));
+	assert(IsIgual({ 0,0 }, Mover(puntoE, { 0, 0 })));
+	assert(!IsIgual({ 1.5,0 }, Mover(puntoE, { 0, 1.5 })));
+	assert(IsIgual({ 6,-3 }, Mover(puntoI, { 6, -3 })));
+	assert(IsIgual({ 0,0 }, Mover(puntoF, { 0, 0 })));
 
 }
 
