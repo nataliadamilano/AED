@@ -1,4 +1,4 @@
-using namespace std;
+#include <stdio.h>
 
 const unsigned MAX = 10;
 
@@ -6,11 +6,11 @@ const unsigned MAX = 10;
 
 struct Punto { double x, y; };
 
-enum struct Color { azul, rojo, verde, amarillo };
+struct Color { uint8_t red, green, blue; };
 
 struct Poligono {
     unsigned n;
-    array<Punto, MAX> vertices;
+    std::array<Punto, MAX> vertices;
     Color color;
 };
 
