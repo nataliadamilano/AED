@@ -3,8 +3,6 @@
 #include "Punto.h"
 #include <cassert>
 #include <cmath>
-#include <cstring>
-
 
 using namespace std;
 
@@ -22,6 +20,20 @@ int main()
 
 
 	/* ---- Asserts ---- */
+
+	assert(3 == GetRho(puntoA));
+	assert(0 == GetPhi(puntoA));
+
+	assert(5.38 < GetRho(puntoB) && 5.39 > GetRho(puntoB));
+	assert(0.38 < GetPhi(puntoB) && 0.39 > GetPhi(puntoB));
+
+	assert(3.60 < GetRho(puntoG) && 3.61 > GetPhi(puntoG));
+	assert(2.55 < GetPhi(puntoG) && 2.56 > GetPhi(puntoG));
+
+	assert(4.47 < GetRho(puntoH) && 4.48 > GetRho(puntoH));
+	assert(-2.67 > GetPhi(puntoH) && -2.68 < GetPhi(puntoH));
+
+
 	assert(not IsIgual(puntoA, puntoB));
 	assert(not IsIgual(puntoB, puntoC));
 	assert(not IsIgual(puntoB, puntoE));
@@ -88,7 +100,7 @@ double GetDistanciaAlOrigen(Punto punto)
 
 double GetRho(Punto punto)
 {
-	return GetDistanciaAlOrigen(punto);
+	return sqrt((punto.x * punto.x) + (punto.y * punto.y));
 }
 
 double GetPhi(Punto punto)
