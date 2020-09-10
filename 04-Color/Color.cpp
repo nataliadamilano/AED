@@ -17,26 +17,25 @@ int main()
 {
     // Pruebas
 
-    assert(127 == Mezclar(rojo, verde).red && 127 == Mezclar(rojo, verde).green && 0 == Mezclar(rojo, verde).blue);
-    assert(0 == Mezclar(azul, verde).red && 127 == Mezclar(azul, verde).green && 127 == Mezclar(azul, verde).blue);
-    assert(127 == Mezclar(azul, rojo).red && 0 == Mezclar(azul, rojo).green && 127 == Mezclar(azul, rojo).blue);
-    assert(255 == Mezclar(blanco, blanco).red && 255 == Mezclar(blanco, blanco).green && 255 == Mezclar(blanco, blanco).blue);
+    assert(IsIgual({ 127,127,0 }, Mezclar(rojo, verde)));
+    assert(IsIgual({ 0,127,127 }, Mezclar(azul, verde)));
+    assert(IsIgual({ 127,0,127 }, Mezclar(azul, rojo)));
+    assert(IsIgual(blanco, Mezclar(blanco, blanco)));
 
-    assert(85 == MezclarProporciones(azul, 2, rojo, 1).red && 0 == MezclarProporciones(azul, 2, rojo, 1).green && 85 == MezclarProporciones(azul, 2, rojo, 1).blue);
-    assert(170 == MezclarProporciones(amarillo, 2, rojo, 1).red && 85 == MezclarProporciones(amarillo, 2, rojo, 1).green && 0 == MezclarProporciones(amarillo, 2, rojo, 1).blue);
-    assert(85 == MezclarProporciones(blanco, 4, rojo, 2).red && 42 == MezclarProporciones(blanco, 4, rojo, 2).green && 42 == MezclarProporciones(blanco, 4, rojo, 2).blue);
+    assert(IsIgual({ 85,0,85 }, MezclarProporciones(azul, 2, rojo, 1)));    
+    assert(IsIgual({ 170,85,0 }, MezclarProporciones(amarillo, 2, rojo, 1)));    
+    assert(IsIgual({ 85,42,42 }, MezclarProporciones(blanco, 4, rojo, 2)));
 
-    assert(0 == Sumar(verde, azul).red && 255 == Sumar(verde, azul).green && 255 == Sumar(verde, azul).blue);
-    assert(255 == Sumar(rojo, azul).red && 0 == Sumar(rojo, azul).green && 255 == Sumar(rojo, azul).blue);
-    assert(255 == Sumar(verde, magenta).red && 255 == Sumar(verde, magenta).green && 255 == Sumar(verde, magenta).blue);
+    assert(IsIgual(cian, Sumar(verde, azul)));
+    assert(IsIgual(magenta, Sumar(rojo, azul)));
+    assert(IsIgual(blanco, Sumar(verde, magenta)));
 
+    assert(IsIgual(negro, Restar(blanco, blanco)));
+    assert(IsIgual(verde, Restar(amarillo, rojo)));
 
-    assert(0 == Restar(blanco, blanco).red && 0 == Restar(blanco, blanco).green && 0 == Restar(blanco, blanco).blue);
-    assert(0 == Restar(amarillo, rojo).red && 255 == Restar(amarillo, rojo).green && 0 == Restar(amarillo, rojo).blue);
-
-    assert(cian.red == GetComplementario(rojo).red && cian.green == GetComplementario(rojo).green && cian.blue == GetComplementario(rojo).blue);
-    assert(magenta.red == GetComplementario(verde).red && magenta.green == GetComplementario(verde).green && magenta.blue == GetComplementario(verde).blue);
-    assert(amarillo.red == GetComplementario(azul).red && amarillo.green == GetComplementario(azul).green && amarillo.blue == GetComplementario(azul).blue);
+    assert(IsIgual(cian, GetComplementario(rojo)));    
+    assert(IsIgual(magenta, GetComplementario(verde)));    
+    assert(IsIgual(amarillo, GetComplementario(azul)));
 
     assert("#ff0000" == GetHtmlHex(rojo));
     assert("#ffff00" == GetHtmlHex(amarillo));
