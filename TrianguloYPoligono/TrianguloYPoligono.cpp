@@ -20,15 +20,15 @@ const unsigned MAX = 10;
 
 struct Punto { double x, y; };
 
-enum struct Colores { azul, rojo, verde, amarillo };
+enum struct Color { azul, rojo, verde, amarillo };
 
 struct Poligono {
     unsigned n;
     array<Punto, MAX> puntos;
-    Colores color;
+    Color color;
 };
 
-struct Triangulo { array<Punto, 3> puntos; Colores color; };
+struct Triangulo { array<Punto, 3> puntos; Color color; };
 
 // Fin Prototipos.
 
@@ -38,11 +38,11 @@ void AgregarPuntoAlFinal(Poligono& poligono, const Punto& punto);
 
 void QuitarPuntoDelFinal(Poligono& poligono);
 
-void SetColorPoligono(Poligono& poligono, const Colores& color);
+void SetColorPoligono(Poligono& poligono, Color color);
 
 void SetPuntoPoligono(Poligono& poligono, const Punto& puntoAModificar, const Punto& punto);
 
-Colores GetColorPoligono(const Poligono& poligono);
+Color GetColorPoligono(const Poligono& poligono);
 
 Punto GetPuntoPoligono(const Poligono& poligono, unsigned pos);
 
@@ -50,11 +50,11 @@ Punto GetPuntoPoligono(const Poligono& poligono, unsigned pos);
 
 // Funciones Triángulo
 
-void SetColorTriangulo(Triangulo& triangulo, const Colores& color);
+void SetColorTriangulo(Triangulo& triangulo, const Color& color);
 
 void SetPuntoTriangulo(Triangulo& triangulo, const Punto& puntoAModificar, const Punto& punto);
 
-Colores GetColorTriangulo(const Triangulo& triangulo);
+Color GetColorTriangulo(const Triangulo& triangulo);
 
 float GetPerimetroTriangulo(const Triangulo& triangulo);
 
@@ -69,11 +69,11 @@ float GetDistancia(const Punto& punto1, const Punto& punto2);
 int main()
 {
     /* Declaro polígono. */
-    Poligono poligono{ 3, {{{0,0}, {3,0}, {0,3}}}, Colores::azul };
+    Poligono poligono{ 3, {{{0,0}, {3,0}, {0,3}}}, Color::azul };
 
     AgregarPuntoAlFinal(poligono, { 3,2 });
 
-    SetColorPoligono(poligono, Colores::verde);
+    SetColorPoligono(poligono, Color::verde);
 
     // cout << static_cast<int>(GetColorPoligono(poligono1)) << endl;
 
@@ -89,7 +89,7 @@ int main()
 
 
     /* Defino mi struct de tipo Triangulo llamado triangulo, que me servirá para representar esta figura geométrica. */
-    Triangulo triangulo{ {{{-1,1}, {3,1}, {1,-2.464101615}}}, Colores::amarillo };
+    Triangulo triangulo{ {{{-1,1}, {3,1}, {1,-2.464101615}}}, Color::amarillo };
 
     // SetPuntoTriangulo(triangulo, { 3,0 }, { 2,3 });
 
@@ -111,12 +111,12 @@ void AgregarPuntoAlFinal(Poligono& poligono, const Punto& punto)
     }
 }
 
-void SetColorPoligono(Poligono& poligono, const Colores& color)
+void SetColorPoligono(Poligono& poligono, const Color& color)
 {
     poligono.color = color;
 }
 
-Colores GetColorPoligono(const Poligono& poligono)
+Color GetColorPoligono(const Poligono& poligono)
 {
     return poligono.color;
 }
@@ -137,7 +137,7 @@ Punto GetPuntoPoligono(const Poligono& poligono, unsigned pos)
     return poligono.puntos.at(pos);
 }
 
-void SetColorTriangulo(Triangulo& triangulo, const Colores& color)
+void SetColorTriangulo(Triangulo& triangulo, const Color& color)
 {
     triangulo.color = color;
 }
@@ -153,7 +153,7 @@ void SetPuntoTriangulo(Triangulo& triangulo, const Punto& puntoAModificar, const
     }
 }
 
-Colores GetColorTriangulo(const Triangulo& triangulo)
+Color GetColorTriangulo(const Triangulo& triangulo)
 {
     return triangulo.color;
 }
