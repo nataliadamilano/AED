@@ -72,6 +72,15 @@ string GetHtmlHex(Color color)
     return hexaColor;
 }
 
+string GetHtmlRgb(Color color)
+{
+    string colorRed = color.red;
+    string colorGreen = color.green;
+    string colorBlue = color.blue;
+
+    return "rgb(" + colorRed + "," + colorGreen + "," + colorBlue + ")";
+}
+
 bool IsIgual(Color color1, Color color2)
 {
     return color1.red == color2.red && color1.green == color2.green && color1.blue == color2.blue;

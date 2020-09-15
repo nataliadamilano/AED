@@ -15,6 +15,7 @@ Color Sumar(Color color1, Color color2);
 Color Restar(Color color1, Color color2);
 Color GetComplementario(Color color);
 string GetHtmlHex(Color color);
+string GetHtmlRgb(Color color);
 bool IsIgual(Color color1, Color color2);
 
 /* COLORES PRIMARIOS */

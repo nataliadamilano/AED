@@ -34,6 +34,8 @@ int main()
     assert("#000000" == GetHtmlHex(negro));
     assert("#ffffff" == GetHtmlHex(blanco));
 
+    assert("rgb(255,255,255)" == GetHtmlRgb(blanco));
+
     assert(!IsIgual(amarillo, rojo));
     assert(IsIgual(verde, { 0,255,0 }));
     assert(!IsIgual(magenta, { 255,255,0 }));
