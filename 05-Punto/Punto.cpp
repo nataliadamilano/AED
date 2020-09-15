@@ -11,6 +11,10 @@
 
 using namespace std;
 
+int main()
+{
+
+}
 
 bool IsIgual(Punto punto1, Punto punto2)
 {
