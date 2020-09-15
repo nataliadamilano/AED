@@ -68,7 +68,7 @@ int main()
 	assert(Eje::X == GetEje2(puntoF, puntoF.x));
 	assert(Eje::X == GetEje2(puntoI, puntoI.x) && Eje::Y == GetEje2(puntoI, puntoI.y));
 
-	assert(!IsIgual({ 4,-2 }, Mover(puntoA, { 4, -2 })));
+	assert(IsIgual({ 4,-2 }, Mover(puntoA, { 4, -2 })));
 	assert(!IsIgual({ 3,0 }, Mover(puntoA, { 7, -4.3 })));
 	assert(IsIgual({ 0,0 }, Mover(puntoE, { 0, 0 })));
 	assert(!IsIgual({ 1.5,0 }, Mover(puntoE, { 0, 1.5 })));

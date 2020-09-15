@@ -8,12 +8,13 @@
 
 #include "Punto.h"
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 
 int main()
 {
-
+	cout << "Hola!";
 }
 
 bool IsIgual(Punto punto1, Punto punto2)
