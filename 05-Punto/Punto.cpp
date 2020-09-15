@@ -11,10 +11,6 @@
 
 using namespace std;
 
-int main()
-{
-}
-
 bool IsIgual(Punto punto1, Punto punto2)
 {
 	return (punto1.x == punto2.x) && (punto1.y == punto2.y);
