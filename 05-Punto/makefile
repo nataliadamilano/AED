@@ -1,14 +1,8 @@
-output: PuntoTest.o
-	g++ PuntoTest.o -o output
-	Punto.o
-	g++ Punto.o -o output
-
-PuntoTest.o: PuntoTest.cpp
-	g++ -c PuntoTest.cpp
-
-Punto.o: Punto.cpp
-	g++ -c Punto.cpp
-
+output: g++ -o out -I . -I ./05-Punto *.cpp 05-Punto/*.cpp
 
 clean:
 	rm *.o output
+
+
+
+	
