@@ -15,6 +15,9 @@ int main()
 	Punto puntoH{ -4,-2 };
 	Punto puntoI{ 6, -3 };
 
+	cout << "Hola!";
+	cin.get();
+
 	/* ---- Asserts ---- */
 
 	assert(3 == GetRho(puntoA));
