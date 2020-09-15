@@ -1,8 +1,8 @@
-output: Punto.o
-	g++ Punto.o -o output
+output: PuntoTest.o
+	g++ PuntoTest.o -o output
 
-Punto.o: Punto.cpp
-	g++ -c Punto.cpp
+PuntoTest.o: PuntoTest.cpp
+	g++ -c PuntoTest.cpp
 
 clean:
 	rm *.o output
