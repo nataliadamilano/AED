@@ -6,8 +6,7 @@
 
 *IsIgual: Punto x Punto -> **B** *
 
-**IsIgual(punto1, punto2) = { false si (punto1.x <> punto2.x) ^ (punto1.y <> punto2.y),
-                                true si (punto1.x == punto2.x) && (punto1.y == punto2.y)**
+**IsIgual(punto1, punto2) = { true si (punto1.x == punto2.x) && (punto1.y == punto2.y), false e.o.c  }**
 
 
 ### **Función GetDistancia**
