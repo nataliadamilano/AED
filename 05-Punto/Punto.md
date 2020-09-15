@@ -13,6 +13,8 @@
 
 *GetDistancia: Punto x Punto -> **R** *
 
+**GetDistancia(punto1, punto2) = √(punto2.x - punto1.x)^2 + (punto2.y - punto1.y)^2**
+
 
 ### **Función GetDistanciaAlOrigen**
 
