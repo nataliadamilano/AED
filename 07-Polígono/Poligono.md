@@ -25,7 +25,9 @@
 
 ### **Función GetCantidadLados**
 
-*GetCantidadLados: Poligono -> **Z** *
+*GetCantidadLados: Poligono → **Z** *
+
+**GetCantidadLados(poligono) = poligono.n + 1**
 
 
 
@@ -37,8 +39,9 @@
 
 ### **Función GetDistancia**
 
-*GetDistancia: Punto x Punto -> **R** *
+*GetDistancia: Punto x Punto → **R** *
 
+**GetDistancia(punto1, punto2) = √(punto2.x - punto1.x)^2 + (punto2.y - punto1.y)^2**
 
 ## Conjunto de valores
 

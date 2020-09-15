@@ -6,10 +6,14 @@
 
 *IsIgual: Punto x Punto -> **B** *
 
+**IsIgual(punto1, punto2) = { true si (punto1.x == punto2.x) && (punto1.y == punto2.y), false e.o.c  }**
+
 
 ### **Función GetDistancia**
 
 *GetDistancia: Punto x Punto -> **R** *
+
+**GetDistancia(punto1, punto2) = √(punto2.x - punto1.x)^2 + (punto2.y - punto1.y)^2**
 
 
 ### **Función GetDistanciaAlOrigen**
