@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <array>
 
 const unsigned MAX = 10;
 

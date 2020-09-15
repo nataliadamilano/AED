@@ -6,7 +6,6 @@
  * 10/09/2020
  */
 
-#include <array>
 #include <math.h>
 #include "Poligono.h"
 
