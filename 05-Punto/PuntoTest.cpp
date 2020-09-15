@@ -16,12 +16,9 @@ int main()
 	Punto puntoH{ -4,-2 };
 	Punto puntoI{ 6, -3 };
 
-	std::cout << "Hola!";
-	std::cin.get();
-
 	/* ---- Asserts ---- */
 
-	assert(80 == GetRho(puntoA));
+	assert(3 == GetRho(puntoA));
 	assert(0 == GetPhi(puntoA));
 
 	assert(5.38 < GetRho(puntoB) && 5.39 > GetRho(puntoB));
