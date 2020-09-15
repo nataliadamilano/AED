@@ -17,7 +17,7 @@ int main()
 
 	/* ---- Asserts ---- */
 
-	assert(3 != GetRho(puntoA));
+	assert(3 == GetRho(puntoA));
 	assert(0 == GetPhi(puntoA));
 
 	assert(5.38 < GetRho(puntoB) && 5.39 > GetRho(puntoB));
@@ -68,7 +68,7 @@ int main()
 	assert(Eje::X == GetEje2(puntoF, puntoF.x));
 	assert(Eje::X == GetEje2(puntoI, puntoI.x) && Eje::Y == GetEje2(puntoI, puntoI.y));
 
-	assert(IsIgual({ 4,-2 }, Mover(puntoA, { 4, -2 })));
+	assert(!IsIgual({ 4,-2 }, Mover(puntoA, { 4, -2 })));
 	assert(!IsIgual({ 3,0 }, Mover(puntoA, { 7, -4.3 })));
 	assert(IsIgual({ 0,0 }, Mover(puntoE, { 0, 0 })));
 	assert(!IsIgual({ 1.5,0 }, Mover(puntoE, { 0, 1.5 })));
