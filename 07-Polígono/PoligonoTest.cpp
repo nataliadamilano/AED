@@ -3,9 +3,9 @@
 
 int main()
 {
-    Poligono poligono{ 2, {0,0}, {3,0}, {0,3}, {255,0,0} };
-    Poligono poligono2{ 4, {{0,0}, {3,0}, {0,3}, {4,1}, {6,2}}, {{0,255,0}} };
-    Poligono poligono3{ 3, {{0,0}, {3,0}, {0,3}, {5,5}}, {{0,0,255}} };
+    Poligono poligono{ 2, {{{0,0}, {3,0}, {0,3}}}, {255,0,0} };
+    Poligono poligono2{ 4, {{{0,0}, {3,0}, {0,3}, {4,1}, {6,2}}}, {0,255,0} };
+    Poligono poligono3{ 3, {{{0,0}, {3,0}, {0,3}, {5,5}}}, {0,0,255} };
 
     // Pruebas
     assert(0 == GetVertice(poligono, 0).x && 0 == GetVertice(poligono, 0).y);
