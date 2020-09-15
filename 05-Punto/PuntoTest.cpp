@@ -1,4 +1,4 @@
-#include "Punto.cpp"
+#include "Punto.h"
 #include <cassert>
 
 
@@ -20,7 +20,7 @@ int main()
 
 	/* ---- Asserts ---- */
 
-	assert(3 == GetRho(puntoA));
+	assert(80 == GetRho(puntoA));
 	assert(0 == GetPhi(puntoA));
 
 	assert(5.38 < GetRho(puntoB) && 5.39 > GetRho(puntoB));
