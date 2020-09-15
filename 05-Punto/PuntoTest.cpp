@@ -17,7 +17,7 @@ int main()
 
 	/* ---- Asserts ---- */
 
-	assert(3 == GetRho(puntoA));
+	assert(3 != GetRho(puntoA));
 	assert(0 == GetPhi(puntoA));
 
 	assert(5.38 < GetRho(puntoB) && 5.39 > GetRho(puntoB));
