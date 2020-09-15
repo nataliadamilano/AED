@@ -15,6 +15,7 @@ using namespace std;
 int main()
 {
 	cout << "Hola!";
+	cin.get();
 }
 
 bool IsIgual(Punto punto1, Punto punto2)
