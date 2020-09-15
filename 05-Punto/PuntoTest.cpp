@@ -1,5 +1,6 @@
 #include "Punto.h"
 #include <cassert>
+#include <iostream>
 
 
 
@@ -15,8 +16,8 @@ int main()
 	Punto puntoH{ -4,-2 };
 	Punto puntoI{ 6, -3 };
 
-	cout << "Hola!";
-	cin.get();
+	std::cout << "Hola!";
+	std::cin.get();
 
 	/* ---- Asserts ---- */
 

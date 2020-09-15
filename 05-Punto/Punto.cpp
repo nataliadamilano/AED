@@ -8,7 +8,6 @@
 
 #include "Punto.h"
 #include <cmath>
-#include <iostream>
 
 using namespace std;
 
