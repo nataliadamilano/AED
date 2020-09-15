@@ -1,4 +1,4 @@
-#include "Punto.h"
+#include "Punto.cpp"
 #include <cassert>
 
 
