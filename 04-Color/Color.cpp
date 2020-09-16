@@ -76,9 +76,9 @@ string GetHtmlHex(Color color)
 string GetHtmlRgb(Color color)
 {
   
-   string colorRed = ((char)color.red);
-   string colorGreen = ((char)color.green);
-   string colorBlue = ((char)color.blue);
+   string colorRed = ((char*)color.red);
+   string colorGreen = ((char*)color.green);
+   string colorBlue = ((char*)color.blue);
 
 
     return "rgb(" + colorRed + "," + colorGreen + "," + colorBlue + ")";
