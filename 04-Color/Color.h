@@ -6,7 +6,6 @@ using namespace std;
 const uint8_t MAX = 255;
 const uint8_t MIN = 0;
 
-
 struct Color { uint8_t red, green, blue; };
 
 Color Mezclar(Color color1, Color color2);
@@ -15,7 +14,6 @@ Color Sumar(Color color1, Color color2);
 Color Restar(Color color1, Color color2);
 Color GetComplementario(Color color);
 string GetHtmlHex(Color color);
-string GetHtmlRgb(Color color);
 bool IsIgual(Color color1, Color color2);
 
 /* COLORES PRIMARIOS */

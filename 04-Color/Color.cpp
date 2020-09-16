@@ -7,8 +7,8 @@
 
 #include <cmath>
 #include <cstdint>
+#include <fstream>
 #include "Color.h"
-#include <array>
 
 using namespace std;
 
@@ -71,17 +71,6 @@ string GetHtmlHex(Color color)
     sprintf(hexaColor, "#%02x%02x%02x", color.red, color.green, color.blue);
 
     return hexaColor;
-}
-
-string GetHtmlRgb(Color color)
-{
-  
-   string colorRed = ((char*)color.red);
-   string colorGreen = ((char*)color.green);
-   string colorBlue = ((char*)color.blue);
-
-
-    return "rgb(" + colorRed + "," + colorGreen + "," + colorBlue + ")";
 }
 
 bool IsIgual(Color color1, Color color2)
