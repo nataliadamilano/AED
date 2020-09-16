@@ -75,9 +75,13 @@ string GetHtmlHex(Color color)
 
 string GetHtmlRgb(Color color)
 {
-    array<string, 3> htmlRGBColor{ color.red, color.green, color.blue};
+  
+   string colorRed = ((char*)color.red);
+   string colorGreen = ((char*)color.green);
+   string colorBlue = ((char*)color.blue);
 
-    return "rgb(" + htmlRGBColor[0] + "," + htmlRGBColor[1] + "," + htmlRGBColor[2] + ")";
+
+    return "rgb(" + colorRed + "," + colorGreen + "," + colorBlue + ")";
 }
 
 bool IsIgual(Color color1, Color color2)
