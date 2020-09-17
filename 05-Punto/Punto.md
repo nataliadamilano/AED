@@ -51,7 +51,7 @@
 
 ### **Función Mover**
 
-*Mover: Punto x Punto -> Punto *
+*Mover: Punto, Punto -> Punto *
 
 
 ## Conjunto de valores
