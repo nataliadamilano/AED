@@ -58,6 +58,6 @@ Eje GetEje2(Punto punto, double ejePunto)
 
 Punto Mover(Punto& puntoAMover, Punto nuevoPunto)
 {
-	return nuevoPunto.x != puntoAMover.x || nuevoPunto.y != puntoAMover.y ? puntoAMover = nuevoPunto :
+	return nuevoPunto.x != puntoAMover.x && nuevoPunto.y != puntoAMover.y ? puntoAMover = nuevoPunto :
 		puntoAMover;
 }
