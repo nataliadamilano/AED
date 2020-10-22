@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <array>
+#include <string>
+#include <iostream>
+#include <fstream>
 
 const unsigned MAX = 10;
 
@@ -13,6 +16,11 @@ struct Poligono {
     unsigned n;
     std::array<Punto, MAX> vertices;
     Color color;
+};
+
+struct Poligonos {
+	unsigned n;
+	std::array<Poligono, MAX> poligonos;
 };
 
 // Funciones
@@ -30,3 +38,25 @@ unsigned GetCantidadLados(const Poligono& poligono);
 float GetPerimetroPoligono(const Poligono& poligono);
 
 float GetDistancia(const Punto& punto1, const Punto& punto2);
+
+bool EscribirArchivo(std::ofstream& archivo, const Poligono& poligono);
+
+void EscribirPuntos(std::ofstream& archivo, const Poligono& poligono);
+
+bool GetPuntos(std::ofstream& archivo, const Punto& punto);
+
+bool EscribirColor(std::ofstream& archivo, const Color& color);
+
+bool ExtraerPoligono(std::ifstream& archivoALeer, Poligono& poligonoACompletar);
+
+bool ExtraerPuntos(std::ifstream& archivoALeer, Poligono& poligonoACompletar);
+
+bool ExtraerColor(std::ifstream& archivoALeer, Poligono& poligonoACompletar);
+
+bool ExtraerLimite(std::ifstream& archivoALeer);
+
+void MostrarPoligonos(std::ifstream& archivoALeer, Poligono& poligonoACompletar, Poligonos& arrayPoligonos);
+
+void EscribirPoligonosAutomatico(std::ofstream& archivoAEscribir, Poligonos& arrayPoligonos);
+
+void EscribirPoligonosManual(std::ofstream& archivoAEscribir, Poligonos& arrayPoligonos);
