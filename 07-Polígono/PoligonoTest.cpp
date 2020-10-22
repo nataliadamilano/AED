@@ -27,10 +27,28 @@ int main()
 
 	Poligono poligonoACompletar;
 
-	MostrarPoligonos(archivoALeer, poligonoACompletar, poligonos);
+	ExtraerYMostrarPoligonos(archivoALeer, poligonoACompletar, poligonos);
 
 	archivoALeer.close();
 
+	//Pruebas con archivo
+
+	archivoALeer.open("poligonos.txt");
+
+	Poligono poligonoPrueba;
+
+	ExtraerPoligono(archivoALeer, poligonoPrueba);
+
+	assert(poligonoPrueba.vertices[0].x == poligono.vertices[0].x);
+	assert(poligonoPrueba.vertices[0].y == poligono.vertices[0].y);
+
+	assert(poligonoPrueba.vertices[1].x == poligono.vertices[1].x);
+	assert(poligonoPrueba.vertices[1].y == poligono.vertices[1].y);
+
+	assert(poligonoPrueba.vertices[2].x == poligono.vertices[2].x);
+	assert(poligonoPrueba.vertices[2].y == poligono.vertices[2].y);
+
+	archivoALeer.close();
 
 	//Pruebas
 
@@ -46,20 +64,20 @@ int main()
 	assert(5 != GetCantidadLados(poligono));
 	assert(3 != GetCantidadLados(poligono3));
 
-	float perimPoligono = GetPerimetroPoligono(poligono3);
+	float perimPoligono = GetPerimetroPoligono(poligono);
 
 	assert(10.24 < perimPoligono && 10.25 > perimPoligono);
 	assert(10.25 > perimPoligono && 10.26 > perimPoligono);
 
 	perimPoligono = GetPerimetroPoligono(poligono2);
 
-	assert(14.36 < perimPoligono && 14.38 > perimPoligono);
+	assert(14.37 < perimPoligono && 14.38 > perimPoligono);
 	assert(14.3790 > perimPoligono && 14.37 < perimPoligono);
 
 	perimPoligono = GetPerimetroPoligono(poligono3);
 
-	assert(50.21 < perimPoligono && 50.22 > perimPoligono);
-	assert(50.22 > perimPoligono && 50.21 < perimPoligono);
+	assert(19.69 < perimPoligono && 19.70 > perimPoligono);
+	assert(19.6990 > perimPoligono && 19.6980 < perimPoligono);
 
 	AddVertice(poligono, { 6,3.5 });
 

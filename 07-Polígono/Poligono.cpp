@@ -96,7 +96,7 @@ bool ExtraerLimite(std::ifstream& archivoALeer)
     return bool(archivoALeer);
 }
 
-void MostrarPoligonos(std::ifstream& archivoALeer, Poligono& poligonoACompletar, Poligonos& arrayPoligonos)
+void ExtraerYMostrarPoligonos(std::ifstream& archivoALeer, Poligono& poligonoACompletar, Poligonos& arrayPoligonos)
 {
     for (int i = 0; i <= arrayPoligonos.n; i++)
     {
@@ -219,15 +219,12 @@ float GetPerimetroPoligono(const Poligono& poligono)
         if (i < poligono.n)
         {
             perimetro += GetDistancia(poligono.vertices[i], poligono.vertices[i + 1]);
-            std::cout << "PRIMERO: " << perimetro << "\n";
         }
         else
         {
             perimetro += GetDistancia(poligono.vertices[i], poligono.vertices[0]);
-            std::cout << "ULTIMO: " << perimetro << "\n";
         }
     }
-    std::cout << perimetro << "\n";
     return perimetro;
 }
 
