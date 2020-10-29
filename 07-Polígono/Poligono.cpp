@@ -17,17 +17,17 @@ using namespace std;
 bool EscribirArchivo(ofstream& archivo, const Poligono& poligono)
 
 {
-    archivo << poligono.n << " ";
-    EscribirPuntos(archivo, poligono);
-    EscribirColor(archivo, poligono.color);
-    archivo << "@" << " ";
+        archivo << poligono.n << " ";
+        EscribirPuntos(archivo, poligono);
+        EscribirColor(archivo, poligono.color);
+        archivo << "@" << " ";
 
     return bool (archivo);
 }
 
 void EscribirPuntos(ofstream& archivo, const Poligono& poligono)
 {
-    for (int i = 0; i <= poligono.n; i++)
+    for (int i = 0; i < poligono.n; i++)
     {
         GetPuntos(archivo, poligono.vertices[i]);
     }
@@ -37,7 +37,7 @@ bool GetPuntos(ofstream& archivo, const Punto& punto)
 {
     archivo << punto.x << " " << punto.y << " ";
 
-    return bool (archivo);
+    return bool(archivo);
 }
 
 bool EscribirColor(ofstream& archivo, const Color& color)
@@ -49,13 +49,13 @@ bool EscribirColor(ofstream& archivo, const Color& color)
 
 bool ExtraerPoligono(std::ifstream& archivoALeer, Poligono& poligonoACompletar)
 {
-    archivoALeer >> poligonoACompletar.n;
-    if (bool(archivoALeer) == false)
+    if (archivoALeer.fail())
     {
         std:cout << "ERROR! No se ha podido leer del archivo." << "\n";
     }
     else
     {
+        archivoALeer >> poligonoACompletar.n;
         ExtraerPuntos(archivoALeer, poligonoACompletar);
         ExtraerColor(archivoALeer, poligonoACompletar);
         ExtraerLimite(archivoALeer);
@@ -96,32 +96,38 @@ bool ExtraerLimite(std::ifstream& archivoALeer)
     return bool(archivoALeer);
 }
 
-void ExtraerYMostrarPoligonos(std::ifstream& archivoALeer, Poligono& poligonoACompletar, Poligonos& arrayPoligonos)
+void ExtraerYMostrarPoligonos(std::ifstream& archivoALeer, Poligono& poligonoACompletar, const Poligonos& arrayPoligonos)
 {
-    for (int i = 0; i <= arrayPoligonos.n; i++)
+    for (int j = 0; j < arrayPoligonos.n; j++)
     {
-        if (ExtraerPoligono(archivoALeer, poligonoACompletar))
+        if (IsPerimetroPolMayorAX(arrayPoligonos.poligonos[j]))
         {
-            std::cout << "POLIGONO " << i + 1 << ":\n" << "CANT. VERTICES: " << poligonoACompletar.n+1 << "\n" << "VERTICES: ";
-
-            for (int i = 0; i <= poligonoACompletar.n; i++)
+            if (ExtraerPoligono(archivoALeer, poligonoACompletar))
             {
-                std::cout << "(" << poligonoACompletar.vertices[i].x << "," << poligonoACompletar.vertices[i].y << ") ";
-            }
+                std::cout << "POLIGONO " << j + 1 << ":\n" << "CANT. VERTICES: " << poligonoACompletar.n << "\n" << "VERTICES: ";
 
-            std::cout << "\nROJO: " << std::to_string(poligonoACompletar.color.red) << "\n";
-            std::cout << "VERDE: " << std::to_string(poligonoACompletar.color.green) << "\n";
-            std::cout << "AZUL: " << std::to_string(poligonoACompletar.color.blue) << "\n";
-            std::cout << "CANTIDAD DE LADOS: " << GetCantidadLados(poligonoACompletar) << "\n" << "\n";
+                for (int i = 0; i < poligonoACompletar.n; i++)
+                {
+                    std::cout << "(" << poligonoACompletar.vertices[i].x << "," << poligonoACompletar.vertices[i].y << ") ";
+                }
+
+                std::cout << "\nROJO: " << std::to_string(poligonoACompletar.color.red) << "\n";
+                std::cout << "VERDE: " << std::to_string(poligonoACompletar.color.green) << "\n";
+                std::cout << "AZUL: " << std::to_string(poligonoACompletar.color.blue) << "\n";
+                std::cout << "CANTIDAD DE LADOS: " << GetCantidadLados(poligonoACompletar) << "\n" << "\n";
+            }
         }
     }
 }
 
-void EscribirPoligonosAutomatico(std::ofstream& archivoAEscribir, Poligonos& arrayPoligonos)
+void EscribirPoligonosAutomatico(std::ofstream& archivoAEscribir, const Poligonos& arrayPoligonos)
 {
-    for (int i = 0; i <= arrayPoligonos.n; i++)
+    for (int i = 0; i < arrayPoligonos.n; ++i)
     {
-        EscribirArchivo(archivoAEscribir, arrayPoligonos.poligonos[i]);
+        if (IsPerimetroPolMayorAX(arrayPoligonos.poligonos[i]))
+        {
+            EscribirArchivo(archivoAEscribir, arrayPoligonos.poligonos[i]);
+        }
     }
 }
 
@@ -139,34 +145,73 @@ void EscribirPoligonosManual(std::ofstream& archivoAEscribir, Poligonos& arrayPo
         {
             Poligono poligonoManual;
 
+            std::cout << "CANT. VERTICES: ";
+            
             std::cin >> poligonoManual.n;
 
-            for (int i = 0; i <= poligonoManual.n; i++)
+            std::cout << "VERTICES: ";
+
+            for (int i = 0; i < poligonoManual.n; i++)
             {
                 std::cin >> poligonoManual.vertices[i].x >> poligonoManual.vertices[i].y;
             }
+
+            std::cout << "COLOR ROJO: ";
+
             int valorColor;
 
             std::cin >> valorColor;
             poligonoManual.color.red = valorColor;
 
+            std::cout << "COLOR VERDE: ";
+
             std::cin >> valorColor;
             poligonoManual.color.green = valorColor;
+
+            std::cout << "COLOR AZUL: ";
 
             std::cin >> valorColor;
             poligonoManual.color.blue = valorColor;
 
-            arrayPoligonos.n = arrayPoligonos.n + 1;
+            if (IsPerimetroPolMayorAX(poligonoManual))
+            {
+                arrayPoligonos.n = arrayPoligonos.n + 1;
 
-            arrayPoligonos.poligonos.at(arrayPoligonos.n) = poligonoManual;
+                arrayPoligonos.poligonos.at(arrayPoligonos.n) = poligonoManual;
 
-            EscribirArchivo(archivoAEscribir, poligonoManual);
+                EscribirArchivo(archivoAEscribir, poligonoManual);
+            }
         }
         else if (respuesta != 0)
         {
             std::cout << "Respuesta incorrecta.\n";
         }
     }
+}
+
+bool IsPerimetroPolMayorAX(const Poligono& poligono)
+{
+    return (GetPerimetroPoligono(poligono) > 14);
+}
+
+Poligonos GetArrayPoligonosPerimetroMayorAX(const Poligonos& arrayPoligonos)
+{
+    Poligonos poligonosPerimetroMayorAX;
+
+    int j = 0;
+
+    for (int i = 0; i < arrayPoligonos.n; ++i)
+    {
+        if (IsPerimetroPolMayorAX(arrayPoligonos.poligonos[i]))
+        {
+            poligonosPerimetroMayorAX.poligonos[j] = arrayPoligonos.poligonos[i];
+
+            poligonosPerimetroMayorAX.n = ++j;
+
+            ++j;
+        }
+    }
+    return poligonosPerimetroMayorAX;
 }
 
 //FUNCIONES ANTERIORES:
@@ -206,7 +251,7 @@ void RemoveVertice(Poligono& poligono)
 
 unsigned GetCantidadLados(const Poligono& poligono)
 {
-    return poligono.n + 1;
+    return poligono.n;
 }
 
 float GetPerimetroPoligono(const Poligono& poligono)

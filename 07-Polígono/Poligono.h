@@ -55,8 +55,12 @@ bool ExtraerColor(std::ifstream& archivoALeer, Poligono& poligonoACompletar);
 
 bool ExtraerLimite(std::ifstream& archivoALeer);
 
-void ExtraerYMostrarPoligonos(std::ifstream& archivoALeer, Poligono& poligonoACompletar, Poligonos& arrayPoligonos);
+void ExtraerYMostrarPoligonos(std::ifstream& archivoALeer, Poligono& poligonoACompletar, const Poligonos& arrayPoligonos);
 
-void EscribirPoligonosAutomatico(std::ofstream& archivoAEscribir, Poligonos& arrayPoligonos);
+void EscribirPoligonosAutomatico(std::ofstream& archivoAEscribir, const Poligonos& arrayPoligonos);
 
 void EscribirPoligonosManual(std::ofstream& archivoAEscribir, Poligonos& arrayPoligonos);
+
+bool IsPerimetroPolMayorAX(const Poligono& poligono);
+
+Poligonos GetArrayPoligonosPerimetroMayorAX(const Poligonos& arrayPoligonos);
