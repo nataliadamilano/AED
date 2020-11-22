@@ -29,6 +29,8 @@ void AddVertice(Poligono& poligono, const Punto& vertice);
 
 Punto GetVertice(const Poligono& poligono, unsigned pos);
 
+Poligono GetPoligonoArrayPoligonos(const Poligonos& arrayPoligonos, unsigned pos);
+
 void SetVertice(Poligono& poligono, const Punto& verticeACambiar, const Punto& verticeNuevo);
 
 void RemoveVertice(Poligono& poligono);
@@ -55,8 +57,12 @@ bool ExtraerColor(std::ifstream& archivoALeer, Poligono& poligonoACompletar);
 
 bool ExtraerLimite(std::ifstream& archivoALeer);
 
-void ExtraerYMostrarPoligonos(std::ifstream& archivoALeer, Poligono& poligonoACompletar, Poligonos& arrayPoligonos);
+void ExtraerYMostrarPoligonos(std::ifstream& archivoALeer, Poligono& poligonoACompletar, const Poligonos& arrayPoligonos);
 
 void EscribirPoligonosAutomatico(std::ofstream& archivoAEscribir, Poligonos& arrayPoligonos);
 
 void EscribirPoligonosManual(std::ofstream& archivoAEscribir, Poligonos& arrayPoligonos);
+
+bool IsPerimetroPolMayorAX(const Poligono& poligono);
+
+Poligonos GetArrayPoligonosPerimetroMayorAX(const Poligonos& arrayPoligonos);

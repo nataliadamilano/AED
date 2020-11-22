@@ -1,23 +1,27 @@
 #include <cassert>
 #include "Poligono.h"
 #include <iostream>
+#include <iomanip>
 
 
 int main()
 {
-	Poligono poligono{ 2, {{{0,0}, {3,0}, {0,3}}}, {255,0,0} };
-	Poligono poligono2{ 4, {{{0,0}, {0,3}, {4,2}, {2,3}, {-1,1}}}, {0,255,0} };
-	Poligono poligono3{ 3, {{{0,0}, {3,0}, {0,3}, {5,5}}}, {0,0,255} };
+	Poligono poligono{ 3, {{{0,0}, {3,0}, {0,3}}}, {255,0,0} };
+	Poligono poligono2{ 5, {{{0,0}, {0,3}, {4,2}, {2,3}, {-1,1}}}, {0,255,0} };
+	Poligono poligono3{ 4, {{{0,0}, {3,0}, {0,3}, {5,5}}}, {0,0,255} };
 
-	Poligonos poligonos{ 2, {{poligono, poligono2, poligono3}} };
+	Poligonos arrayPoligonos{ 3, {{poligono, poligono2, poligono3}} };
 
 	std::ofstream archivo;
 
 	archivo.open("poligonos.txt");
 
-	EscribirPoligonosAutomatico(archivo, poligonos);
+	if (archivo.is_open())
+	{
+		EscribirPoligonosAutomatico(archivo, arrayPoligonos);
 
-	EscribirPoligonosManual(archivo, poligonos);
+		EscribirPoligonosManual(archivo, arrayPoligonos);
+	}
 
 	archivo.close();
 
@@ -25,9 +29,12 @@ int main()
 
 	archivoALeer.open("poligonos.txt");
 
-	Poligono poligonoACompletar;
+	if (archivoALeer.is_open())
+	{
+		Poligono poligonoACompletar;
 
-	ExtraerYMostrarPoligonos(archivoALeer, poligonoACompletar, poligonos);
+		ExtraerYMostrarPoligonos(archivoALeer, poligonoACompletar, GetArrayPoligonosPerimetroMayorAX(arrayPoligonos));
+	}
 
 	archivoALeer.close();
 
@@ -39,14 +46,14 @@ int main()
 
 	ExtraerPoligono(archivoALeer, poligonoPrueba);
 
-	assert(poligonoPrueba.vertices[0].x == poligono.vertices[0].x);
-	assert(poligonoPrueba.vertices[0].y == poligono.vertices[0].y);
+	assert(poligonoPrueba.vertices[0].x == poligono2.vertices[0].x);
+	assert(poligonoPrueba.vertices[0].y == poligono2.vertices[0].y);
 
-	assert(poligonoPrueba.vertices[1].x == poligono.vertices[1].x);
-	assert(poligonoPrueba.vertices[1].y == poligono.vertices[1].y);
+	assert(poligonoPrueba.vertices[1].x == poligono2.vertices[1].x);
+	assert(poligonoPrueba.vertices[1].y == poligono2.vertices[1].y);
 
-	assert(poligonoPrueba.vertices[2].x == poligono.vertices[2].x);
-	assert(poligonoPrueba.vertices[2].y == poligono.vertices[2].y);
+	assert(poligonoPrueba.vertices[2].x == poligono2.vertices[2].x);
+	assert(poligonoPrueba.vertices[2].y == poligono2.vertices[2].y);
 
 	archivoALeer.close();
 
@@ -111,15 +118,15 @@ int main()
 
 	RemoveVertice(poligono2);
 
-	assert(4 == poligono2.n);
+	assert(5 == poligono2.n);
 
 	RemoveVertice(poligono2);
 
-	assert(3 == poligono2.n);
+	assert(4 == poligono2.n);
 
 	RemoveVertice(poligono3);
 
-	assert(3 == poligono3.n);
+	assert(4 == poligono3.n);
 
 	assert(3 == GetDistancia({ 0,0 }, { 3,0 }));
 	assert(6.40 < GetDistancia({ 5,8 }, { 10,4 }) && 6.41 > GetDistancia({ 5,8 }, { 10,4 }));
