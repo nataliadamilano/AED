@@ -16,53 +16,79 @@ struct Poligono {
     unsigned n;
     std::array<Punto, MAX> vertices;
     Color color;
+    //struct Nodo* first{ nullptr };
+    //Color color;
 };
 
 struct Poligonos {
-	unsigned n;
-	std::array<Poligono, MAX> poligonos;
+    unsigned n;
+    std::array<Poligono, MAX> poligonos;
+    //struct NodoPoligonos* first{ nullptr };
 };
 
 // Funciones
 
-void AddVertice(Poligono& poligono, const Punto& vertice);
+void AddVertice(Poligono&, const Punto&);
 
-Punto GetVertice(const Poligono& poligono, unsigned pos);
+Punto GetVertice(const Poligono&, unsigned);
 
-Poligono GetPoligonoArrayPoligonos(const Poligonos& arrayPoligonos, unsigned pos);
+Poligono GetPoligonoFromPoligonos(const Poligonos&, unsigned);
 
-void SetVertice(Poligono& poligono, const Punto& verticeACambiar, const Punto& verticeNuevo);
+void SetVertice(Poligono&, const Punto&, const Punto&);
 
-void RemoveVertice(Poligono& poligono);
+void RemoveVertice(Poligono&);
 
-unsigned GetCantidadLados(const Poligono& poligono);
+unsigned GetCantidadLados(const Poligono&);
 
-float GetPerimetroPoligono(const Poligono& poligono);
+float GetPerimetroPoligono(const Poligono&);
 
-float GetDistancia(const Punto& punto1, const Punto& punto2);
+float GetDistancia(const Punto&, const Punto&);
 
-bool EscribirArchivo(std::ofstream& archivo, const Poligono& poligono);
+bool EscribirArchivo(std::ofstream&, const Poligono&);
 
-void EscribirPuntos(std::ofstream& archivo, const Poligono& poligono);
+void EscribirPuntos(std::ofstream&, const Poligono&);
 
-bool GetPuntos(std::ofstream& archivo, const Punto& punto);
+bool GetPuntos(std::ofstream&, const Punto&);
 
-bool EscribirColor(std::ofstream& archivo, const Color& color);
+bool EscribirColor(std::ofstream&, const Color&);
 
-bool ExtraerPoligono(std::ifstream& archivoALeer, Poligono& poligonoACompletar);
+bool ExtraerPoligono(std::ifstream&, Poligono&);
 
-bool ExtraerPuntos(std::ifstream& archivoALeer, Poligono& poligonoACompletar);
+bool ExtraerPuntos(std::ifstream&, Poligono&);
 
-bool ExtraerColor(std::ifstream& archivoALeer, Poligono& poligonoACompletar);
+bool ExtraerColor(std::ifstream&, Poligono&);
 
-bool ExtraerLimite(std::ifstream& archivoALeer);
+bool ExtraerLimite(std::ifstream&);
 
-void ExtraerYMostrarPoligonos(std::ifstream& archivoALeer, Poligono& poligonoACompletar, const Poligonos& arrayPoligonos);
+void ExtraerYMostrarListaContiguaPoligonos(std::ifstream&, const Poligonos&);
 
-void EscribirPoligonosAutomatico(std::ofstream& archivoAEscribir, Poligonos& arrayPoligonos);
+void EscribirPoligonosAutomatico(std::ofstream&, Poligonos&);
 
-void EscribirPoligonosManual(std::ofstream& archivoAEscribir, Poligonos& arrayPoligonos);
+void EscribirPoligonosManual(std::ofstream&, Poligonos&);
 
-bool IsPerimetroPolMayorAX(const Poligono& poligono);
+bool IsPerimetroPolMayorAX(const Poligono&);
 
-Poligonos GetArrayPoligonosPerimetroMayorAX(const Poligonos& arrayPoligonos);
+Poligonos GetPoligonosPerimetroMayorAX(const Poligonos&);
+
+
+//VERS PUNTEROS
+
+void MostrarListaPoligono(const Poligono&);
+
+void AddPoligono(Poligonos&, const Poligono&);
+
+void MostrarListaPoligonos(const Poligonos&);
+
+void RemovePoligonoListaPoligonos(Poligonos&);
+
+void FreeHeapListaPoligonos(Poligonos&);
+
+void RemovePoligono(Poligono&);
+
+void FreeHeapListaPoligono(Poligono&);
+
+void ExtraerYMostrarListaEnlazadaPoligonos(std::ifstream&, Poligonos&);
+
+bool IsListaPoligonosEmpty(const Poligonos&);
+
+bool IsListaPoligonoEmpty(const Poligono&);

@@ -4,6 +4,10 @@ poligonos: PoligonoTest.o Poligono.o
 PoligonoTest.o: PoligonoTest.cpp
 	g++ -c PoligonoTest.cpp
 
+PoligonoListaEnlazada.o: PoligonoListaEnlazada.cpp
+	g++ -c PoligonoListaEnlazada.cpp
+
+
 Poligono.o: Poligono.cpp
 	g++ -c Poligono.cpp
 

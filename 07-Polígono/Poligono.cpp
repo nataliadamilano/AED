@@ -16,7 +16,8 @@ using namespace std;
 
 const std::string ERROR_POLIGONO = "ERROR! No se ha podido leer del archivo.";
 const std::string ESPACIO = " ";
-const std::string POLIGONO = "POLIGONO ";
+const std::string POLIGONO_N = "POLIGONO ";
+const std::string POLIGONO = "POLIGONO: ";
 const std::string CANTIDAD_VERTICES = "CANT. DE VERTICES: ";
 const std::string CANTIDAD_LADOS = "CANT. DE LADOS: ";
 const std::string VERTICES = "VERTICES: ";
@@ -25,25 +26,24 @@ const std::string RESPUESTA_INCORRECTA = "Respuesta incorrecta.";
 const std::string ROJO = "ROJO: ";
 const std::string VERDE = "VERDE: ";
 const std::string AZUL = "AZUL: ";
+const unsigned VALOR_COND_PERIMETRO = 14;
+const unsigned VALOR_INICIAL_RESPUESTA = 1;
+const unsigned VALOR_FINAL_RESPUESTA = 0;
 
 bool EscribirArchivo(ofstream& archivo, const Poligono& poligono)
 
 {
-    archivo << poligono.n << " ";
+    archivo << poligono.n << ESPACIO;
     EscribirPuntos(archivo, poligono);
     EscribirColor(archivo, poligono.color);
-    //archivo << "@" << " ";
 
     return bool (archivo);
 }
 
 void EscribirPuntos(ofstream& archivo, const Poligono& poligono)
 {
-    for (size_t i = 0; i < poligono.n; i++)
-    {
-        //GetPuntos(archivo, poligono.vertices[i]);
+    for (size_t i = 0; i < poligono.n; ++i)
         GetPuntos(archivo, GetVertice(poligono,i));
-    }
 }
 
 bool GetPuntos(ofstream& archivo, const Punto& punto)
@@ -65,14 +65,13 @@ bool ExtraerPoligono(std::ifstream& archivoALeer, Poligono& poligonoACompletar)
 
     if (archivoALeer.fail())
     {
-    std:cout << ERROR_POLIGONO << "\n";
+        std:cout << ERROR_POLIGONO << "\n";
     }
     else
     {
         archivoALeer >> poligonoACompletar.n;
         ExtraerPuntos(archivoALeer, poligonoACompletar);
         ExtraerColor(archivoALeer, poligonoACompletar);
-        //ExtraerLimite(archivoALeer);
     }
 
     return bool(archivoALeer);
@@ -80,15 +79,11 @@ bool ExtraerPoligono(std::ifstream& archivoALeer, Poligono& poligonoACompletar)
 
 bool ExtraerPuntos(std::ifstream& archivoALeer, Poligono& poligonoACompletar)
 {
-    for (size_t i = 0; i < poligonoACompletar.n; i++)
+    for (size_t i = 0; i < poligonoACompletar.n; ++i)
     {
         archivoALeer >> poligonoACompletar.vertices.at(i).x;
 
-        //archivoALeer >> GetVertice(poligonoACompletar, i).x; No me permite hacer la extracción con el método GetVertice
-
         archivoALeer >> poligonoACompletar.vertices.at(i).y;
-
-        //archivoALeer >> GetVertice(poligonoACompletar, i).y;
     }
     
     return bool(archivoALeer);
@@ -107,18 +102,11 @@ bool ExtraerColor(std::ifstream& archivoALeer, Poligono& poligonoACompletar)
     return bool(archivoALeer);
 }
 
-bool ExtraerLimite(std::ifstream& archivoALeer)
+void ExtraerYMostrarListaContiguaPoligonos(std::ifstream& archivoALeer, const Poligonos& arrayPoligonos)
 {
-    char temp;
-    archivoALeer >> temp;
-
-    return bool(archivoALeer);
-}
-
-void ExtraerYMostrarPoligonos(std::ifstream& archivoALeer, Poligono& poligonoACompletar, const Poligonos& arrayPoligonos)
-{
-    for (size_t i = 0; i < arrayPoligonos.n; i++)
+    for (size_t i = 0; i < arrayPoligonos.n; ++i)
     {
+        Poligono poligonoACompletar;
 
         if (ExtraerPoligono(archivoALeer, poligonoACompletar))
         {
@@ -139,27 +127,24 @@ void ExtraerYMostrarPoligonos(std::ifstream& archivoALeer, Poligono& poligonoACo
 
 void EscribirPoligonosAutomatico(std::ofstream& archivoAEscribir, Poligonos& arrayPoligonos)
 {
-    for (size_t i = 0; i < arrayPoligonos.n; i++)
+    for (size_t i = 0; i < arrayPoligonos.n; ++i)
     {
-        if (IsPerimetroPolMayorAX(GetPoligonoArrayPoligonos(arrayPoligonos, i)))
-        {
-            //EscribirArchivo(archivoAEscribir, arrayPoligonos.poligonos[i]);
-            EscribirArchivo(archivoAEscribir, GetPoligonoArrayPoligonos(arrayPoligonos, i));
-        }
+        if (IsPerimetroPolMayorAX(GetPoligonoFromPoligonos(arrayPoligonos, i)))
+            EscribirArchivo(archivoAEscribir, GetPoligonoFromPoligonos(arrayPoligonos, i));
     }
 }
 
 void EscribirPoligonosManual(std::ofstream& archivoAEscribir, Poligonos& arrayPoligonos)
 {
-    unsigned respuesta = 1;
+    unsigned respuesta = VALOR_INICIAL_RESPUESTA;
 
-    while (respuesta != 0)
+    while (respuesta != VALOR_FINAL_RESPUESTA)
     {
         std::cout << AGREGAR_POLIGONOS << "\n";
 
         std::cin >> respuesta;
 
-        if (respuesta == 1)
+        if (respuesta == VALOR_INICIAL_RESPUESTA)
         {
             Poligono poligonoManual;
 
@@ -168,7 +153,7 @@ void EscribirPoligonosManual(std::ofstream& archivoAEscribir, Poligonos& arrayPo
 
             std::cout << "\n" << VERTICES;
 
-            for (size_t i = 0; i < poligonoManual.n; i++)
+            for (size_t i = 0; i < poligonoManual.n; ++i)
             {
                 std::cin >> poligonoManual.vertices.at(i).x >> poligonoManual.vertices.at(i).y;
             }
@@ -195,14 +180,11 @@ void EscribirPoligonosManual(std::ofstream& archivoAEscribir, Poligonos& arrayPo
                 arrayPoligonos.n = ++arrayPoligonos.n;
 
                 arrayPoligonos.poligonos.at(arrayPoligonos.n) = poligonoManual;
-
-                //GetPoligonoArrayPoligonos(arrayPoligonos, arrayPoligonos.n) = poligonoManual; Cuando hago una asignación no me la toma.
-
-                EscribirArchivo(archivoAEscribir, GetPoligonoArrayPoligonos(arrayPoligonos, arrayPoligonos.n));
                 
+                EscribirArchivo(archivoAEscribir, poligonoManual);
             }
         }
-        else if (respuesta != 0)
+        else if (respuesta != VALOR_FINAL_RESPUESTA)
         {
             std::cout << RESPUESTA_INCORRECTA << "\n";
         }
@@ -211,10 +193,10 @@ void EscribirPoligonosManual(std::ofstream& archivoAEscribir, Poligonos& arrayPo
 
 bool IsPerimetroPolMayorAX(const Poligono& poligono)
 {
-    return (GetPerimetroPoligono(poligono) > 14);
+    return (GetPerimetroPoligono(poligono) > VALOR_COND_PERIMETRO);
 }
 
-Poligonos GetArrayPoligonosPerimetroMayorAX(const Poligonos& arrayPoligonos)
+Poligonos GetPoligonosPerimetroMayorAX(const Poligonos& arrayPoligonos)
 {
     Poligonos poligonosPerimetroMayorAX;
 
@@ -223,13 +205,11 @@ Poligonos GetArrayPoligonosPerimetroMayorAX(const Poligonos& arrayPoligonos)
     for (size_t i = 0; i < arrayPoligonos.n + 1; ++i)
     {
 
-        if (IsPerimetroPolMayorAX(GetPoligonoArrayPoligonos(arrayPoligonos, i)))
+        if (IsPerimetroPolMayorAX(GetPoligonoFromPoligonos(arrayPoligonos, i)))
         {
             poligonosPerimetroMayorAX.n = j + 1;
 
-            //poligonosPerimetroMayorAX.poligonos.at(j) = arrayPoligonos.poligonos.at(i);
-
-            GetPoligonoArrayPoligonos(poligonosPerimetroMayorAX, j) = GetPoligonoArrayPoligonos(arrayPoligonos, i);
+            GetPoligonoFromPoligonos(poligonosPerimetroMayorAX, j) = GetPoligonoFromPoligonos(arrayPoligonos, i);
 
             ++j;
         }
@@ -238,11 +218,10 @@ Poligonos GetArrayPoligonosPerimetroMayorAX(const Poligonos& arrayPoligonos)
     return poligonosPerimetroMayorAX;
 }
 
-Poligono GetPoligonoArrayPoligonos(const Poligonos& arrayPoligonos, unsigned pos)
+Poligono GetPoligonoFromPoligonos(const Poligonos& arrayPoligonos, unsigned pos)
 {
     return arrayPoligonos.poligonos.at(pos);
 }
-
 
 //FUNCIONES ANTERIORES:
 
@@ -261,15 +240,11 @@ Punto GetVertice(const Poligono& poligono, unsigned pos)
 
 void SetVertice(Poligono& poligono, const Punto& verticeACambiar, const Punto& verticeNuevo)
 {
-    for (size_t i = 0; i < poligono.n; i++)
+    for (size_t i = 0; i < poligono.n; ++i)
     {
-        //if (poligono.vertices[i].x == verticeACambiar.x && poligono.vertices[i].y == verticeACambiar.y)
-        //{
-        //    poligono.vertices[i] = verticeNuevo;
-        //}
         if (GetVertice(poligono, i).x == verticeACambiar.x && GetVertice(poligono, i).y == verticeACambiar.y)
         {
-            poligono.vertices[i] = verticeNuevo;
+            poligono.vertices.at(i) = verticeNuevo;
         }
 
     }
@@ -293,7 +268,7 @@ float GetPerimetroPoligono(const Poligono& poligono)
 
     float perimetro = 0;
 
-    for (size_t i = 0; i < poligono.n; i++)
+    for (size_t i = 0; i < poligono.n; ++i)
     {
         if (i < poligono.n - 1)
         {
